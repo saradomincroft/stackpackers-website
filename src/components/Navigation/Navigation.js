@@ -6,28 +6,24 @@ import './Navigation.css';
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(sessionStorage.getItem('activeTab') || 'about');
+  const [activeTab, setActiveTab] = useState(sessionStorage.getItem('activeTab') || 'home');
+  const [burgerVisible, setBurgerVisible] = useState(true);
 
   useEffect(() => {
     sessionStorage.setItem('activeTab', activeTab);
   }, [activeTab]);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
-
   const openNav = () => {
     document.getElementById("mySidebar").style.width = "100%";
-    document.getElementById("openbtn").style.marginRight = "100%";
+    setBurgerVisible(false);
   };
 
   const closeNav = () => {
     document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("openbtn").style.marginRight = "0";
+    setTimeout(() => {
+      setBurgerVisible(true);
+    }, 400); // delay on burger menu show after x is clicked to prevent overlap
+    setMenuOpen(false);
   };
 
   const openTab = (tabName) => {
@@ -59,7 +55,7 @@ export default function Navigation() {
         </Container>
       </Navbar>
 
-      <button id="openbtn" className="open-menu" onClick={openNav}>☰</button>
+      {burgerVisible && <button id="openbtn" className="open-menu" onClick={openNav}>☰</button>}
       <div id="mySidebar" className="sidebar">
         <button className="closebtn" onClick={closeNav}>×</button>
         <ul>
@@ -72,5 +68,4 @@ export default function Navigation() {
       </div>
     </div>
   );
-};
-
+}
