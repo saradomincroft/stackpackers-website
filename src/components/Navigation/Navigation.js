@@ -16,6 +16,7 @@ export default function Navigation() {
 
   const openNav = () => {
     document.getElementById("mySidebar").style.width = "100%";
+    // document.body.style.overflow = 'hidden';
     setBurgerVisible(false);
   };
 
@@ -24,6 +25,7 @@ export default function Navigation() {
     setTimeout(() => {
       setBurgerVisible(true);
     }, 400); // delay on burger menu show after x is clicked to prevent overlap
+    // document.body.style.overflow = 'hidden';
     setMenuOpen(false);
   };
 
@@ -48,7 +50,7 @@ export default function Navigation() {
           <Navbar.Collapse id="responsive-navbar-nav" className={`justify-content-center ${menuOpen ? 'show' : ''}`}>
             <Nav className="align-items-center custom-nav">
               <Nav.Link as={NavLink} to="/" exact onClick={() => openTab('home', '/')}>Home</Nav.Link>
-              <Nav.Link as={NavLink} to="/about" onClick={() => openTab('about', '/about')}>About</Nav.Link>
+              {/* <Nav.Link as={NavLink} to="/about" onClick={() => openTab('about', '/about')}>About</Nav.Link> */}
               <Nav.Link as={NavLink} to="/music" onClick={() => openTab('music', '/music')}>Music</Nav.Link>
               <Nav.Link as={NavLink} to="/events" onClick={() => openTab('events', '/events')}>Events</Nav.Link>
               <Nav.Link as={NavLink} to="/contact" onClick={() => openTab('contact', '/contact')}>Contact</Nav.Link>
@@ -62,7 +64,7 @@ export default function Navigation() {
         <button className="closebtn" onClick={closeNav}>×</button>
         <Nav className="flex-column align-items-center custom-nav">
           <Nav.Link as={NavLink} to="/" exact className="nav-link" onClick={() => openTab('home', '/')}>Home</Nav.Link>
-          <Nav.Link as={NavLink} to="/about" className="nav-link" onClick={() => openTab('about', '/about')}>About</Nav.Link>
+          {/* <Nav.Link as={NavLink} to="/about" className="nav-link" onClick={() => openTab('about', '/about')}>About</Nav.Link> */}
           <Nav.Link as={NavLink} to="/music" className="nav-link" onClick={() => openTab('music', '/music')}>Music</Nav.Link>
           <Nav.Link as={NavLink} to="/events" className="nav-link" onClick={() => openTab('events', '/events')}>Events</Nav.Link>
           <Nav.Link as={NavLink} to="/contact" className="nav-link" onClick={() => openTab('contact', '/contact')}>Contact</Nav.Link>

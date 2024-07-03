@@ -1,6 +1,10 @@
 .custom-navbar {
   background-color: black;
   height: 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  
 }
 
 .custom-navbar .navbar-nav {
@@ -13,6 +17,13 @@
   font-size: 18px;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+  background-color: #333;
+  color: #FFD700;
 }
 
 .logo-container {
@@ -29,11 +40,12 @@
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 1100;
   top: 0;
   right: 0;
   background-color: #111;
   overflow-x: hidden;
+  /* overflow-y: hidden; */
   transition: 0.5s;
   padding-top: 60px;
 }
@@ -48,10 +60,14 @@
   color: white;
   cursor: pointer; 
   width: 100%;
+  /* border-bottom: 1px solid rgba(255, 215, 0, 0.5);  */
 }
 
-.sidebar .nav-link:hover {
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
   background-color: #333;
+  color: #FFD700;
 }
 
 .open-menu {
@@ -60,10 +76,10 @@
   background-color: rgba(0, 0, 0, 0);
   color: white;
   border: none;
-  position: absolute;
+  position: fixed;
   top: 1px;
   right: 1px;
-  z-index: 2;
+  z-index: 1001;
 }
 
 .open-menu:hover {
@@ -94,10 +110,7 @@
   }
 
   .sidebar {
-    width: 250px;
-  }
-
-  .sidebar .closebtn {
     display: none;
   }
 }
+
