@@ -1,18 +1,18 @@
 .custom-navbar {
   background-color: black;
-  width: 100%;
   height: 50px;
 }
 
 .custom-navbar .navbar-nav {
   position: absolute;
-  right:10px;
+  right: 10px;
 }
 
 .custom-navbar .navbar-nav .nav-link {
-  padding: 10px 20px; 
+  padding: 10px 20px;
   font-size: 18px;
   color: white;
+  cursor: pointer;
 }
 
 .logo-container {
@@ -22,7 +22,7 @@
 
 .logo-container img {
   position: absolute;
-  left:10px;
+  left: 10px;
 }
 
 .sidebar {
@@ -38,31 +38,26 @@
   padding-top: 60px;
 }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
 
-.sidebar ul li {
+.sidebar .nav-link {
   padding: 15px;
   text-align: center;
   font-size: 18px;
-  color: #818181;
   transition: 0.3s;
   display: block;
+  color: white;
+  cursor: pointer; 
+  width: 100%;
 }
 
-.sidebar ul li:hover {
+.sidebar .nav-link:hover {
   background-color: #333;
-  cursor: pointer;
-  color: white;
 }
 
 .open-menu {
   font-size: 30px;
   cursor: pointer;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   color: white;
   border: none;
   position: absolute;
@@ -73,14 +68,13 @@
 
 .open-menu:hover {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
 }
 
 .closebtn {
   font-size: 30px;
   cursor: pointer;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   color: white;
   border: none;
   position: absolute;
@@ -91,6 +85,19 @@
 
 .closebtn:hover {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
+}
+
+@media (min-width: 992px) {
+  .open-menu {
+    display: none;
+  }
+
+  .sidebar {
+    width: 250px;
+  }
+
+  .sidebar .closebtn {
+    display: none;
+  }
 }
