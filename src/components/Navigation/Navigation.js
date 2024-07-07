@@ -39,14 +39,14 @@ export default function Navigation() {
     <div className={`overlay-menu ${menuOpen ? 'open' : ''}`}>
       <Navbar expand="lg" className="custom-navbar">
         <Container>
-          <Navbar.Brand className="logo-container">
+          {/* <Navbar.Brand className="logo-container">
             <img
               src={`${process.env.PUBLIC_URL}/img/sp-logo.svg`}
               height="30"
               className="align-top color-black logo"
               alt="Stackpackers Logo"
             />
-          </Navbar.Brand>
+          </Navbar.Brand> */}
           <Navbar.Collapse id="responsive-navbar-nav" className={`justify-content-center ${menuOpen ? 'show' : ''}`}>
             <Nav className="align-items-center custom-nav">
               <Nav.Link as={NavLink} to="/" exact onClick={() => openTab('home', '/')}>Home</Nav.Link>

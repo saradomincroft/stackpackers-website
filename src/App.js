@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/Navigation/Navigation';
-import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Music from './components/Music/Music';
 import Events from './components/Events';
@@ -25,7 +24,6 @@ function App() {
           </Routes>
         </main>
       </Router>
-      {/* <Footer /> */}
     </>
   );
 };

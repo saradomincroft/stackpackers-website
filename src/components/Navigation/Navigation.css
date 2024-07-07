@@ -28,7 +28,8 @@
 
 .custom-navbar .navbar-nav .nav-link.active {
   background-color: #333;
-  color: #FAFA33;
+  /* color: #FAFA33; */
+  color:#FAFA33
 }
 
 .logo-container {
