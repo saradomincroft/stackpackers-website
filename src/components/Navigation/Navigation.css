@@ -65,21 +65,24 @@
   color: white;
   cursor: pointer; 
   width: 100%;
-  /* border-bottom: 1px solid rgba(255, 215, 0, 0.5);  */
 }
 
 
-.sidebar .nav-link:hover,
+
 .sidebar .nav-link.active {
   background-color: #333;
   color: #FFD700;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #444;
 }
 
 .open-menu {
   font-size: 30px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
-  color: white;
+  color: #FFD700;
   border: none;
   position: fixed;
   top: 1px;
@@ -96,7 +99,7 @@
   font-size: 30px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
-  color: white;
+  color: #FFD700;
   border: none;
   position: absolute;
   top: 1px;

@@ -1,5 +1,7 @@
 /* Home.css */
 .video-container {
+  position: relative;
+  display: inline-block;
   box-sizing: border-box; 
   overflow: hidden; 
   padding: 2%;
@@ -11,11 +13,36 @@
   object-fit: contain; 
 }
 
+.video-logo-container {
+  position: absolute;
+  width: 70%;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0; /* Hidden logo at start */
+  animation: zoomIn 1s forwards;
+  z-index: 1;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5); /* Start smaller size */
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1); /* End normal size */
+    opacity: 1;
+  }
+}
+
+
+
 @media (max-width: 768px) {
   .video-container {
-    width: calc(100vw - 10%);
-    height: calc(100vw - 10%);
-    padding: 20px;
+    width: 100vw;
+    height: 100vw;
+    padding: 2%;
   }
 
   .video-container video {
