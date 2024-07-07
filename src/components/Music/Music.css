@@ -1,0 +1,49 @@
+/* Reset padding and margin for ul */
+.musicContent {
+  background-color: #444;
+}
+
+.musicContent ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Style for each list item */
+.musicLink {
+  padding: 10px;
+  width: 100px; /* Set a fixed width for consistency */
+}
+
+/* Style for each image */
+.musicLink img {
+  width: 100%; /* Make sure the images fit the width of the list items */
+  max-width: 100px; /* Ensure the images don't exceed the container size */
+  height: auto;
+  transition: transform 0.3s;
+}
+
+/* Hover effect for images */
+.musicLink img:hover {
+  transform: scale(1.1);
+}
+
+
+
+.soundcloud {
+  padding: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .musicLink {
+    width: 60px; /* Adjust the width for smaller screens */
+  }
+
+  .musicLink img {
+    max-width: 50px; /* Adjust the max-width for smaller screens */
+  }
+}

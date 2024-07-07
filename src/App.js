@@ -4,9 +4,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
-import Home from './components/Home';
-import About from './components/About';
-import Music from './components/Music';
+import Home from './components/Home/Home';
+// import About from './components/About';
+import Music from './components/Music/Music';
 import Events from './components/Events';
 import Contact from './components/Contact';
 

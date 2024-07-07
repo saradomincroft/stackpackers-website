@@ -6,7 +6,7 @@
 }
 
 .tabcontent {
-  /* background-image: url('/public/img/background.jpg'); */
+  background-image: url('/public/img/background.jpg');
   background-color: #FFD700;
   background-size: cover;
   background-position: center;
@@ -14,7 +14,7 @@
   height: 100vh;
   width: 100%;
   padding-top: 50px;
-  padding: 50px;
+
   box-sizing: border-box;
 }
 
