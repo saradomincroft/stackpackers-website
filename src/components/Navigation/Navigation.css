@@ -1,5 +1,5 @@
 .custom-navbar {
-  background-color: black;
+  background-color: #040403;
   height: 50px;
   position: fixed;
   width: 100%;
@@ -28,7 +28,7 @@
 
 .custom-navbar .navbar-nav .nav-link.active {
   background-color: #333;
-  color: #FFD700;
+  color: #FAFA33;
 }
 
 .logo-container {
@@ -71,7 +71,7 @@
 
 .sidebar .nav-link.active {
   background-color: #333;
-  color: #FFD700;
+  color: #FAFA33;
 }
 
 .sidebar .nav-link:hover {
@@ -82,7 +82,7 @@
   font-size: 30px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
-  color: #FFD700;
+  color: #FAFA33;
   border: none;
   position: fixed;
   top: 1px;
@@ -99,7 +99,7 @@
   font-size: 30px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
-  color: #FFD700;
+  color: #FAFA33;
   border: none;
   position: absolute;
   top: 1px;
