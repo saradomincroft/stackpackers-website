@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/Navigation/Navigation';
 import Home from './components/Home/Home';
 import Music from './components/Music/Music';
-import Events from './components/Events';
-import Contact from './components/Contact';
+import Contact from './components/Contact/Contact';
 import Socials from './components/Socials/Socials';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/music" element={<Music />} />
-            <Route path="/events" element={<Events />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

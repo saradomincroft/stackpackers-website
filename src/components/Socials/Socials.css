@@ -1,40 +1,42 @@
+.socialsContainer {
+  background-color: #040404;
+  padding-top: 50px;
+}
+
 .socialsContent {
-    background-color: #040404;
-    padding-top: 55px;
-  }
-  
-  .socialsContent ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
+  padding: 5px;
+  background-color: #040404;
+}
+
+.socialsContent ul {
+  padding: 5px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.socialsLink {
+  width: 50px; /* Reduce the width of each social link */
+}
+
+.socialsLink img {
+  width: 70%;
+  max-width: 70px; /* Reduce the maximum width of the social link images */  height: auto;
+  transition: transform 0.3s;
+}
+
+.socialsLink img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 700px) {
   .socialsLink {
-    padding: 10px;
-    width: 100px;
+    width: 50px; /* Further reduce width for smaller screens */
   }
-  
+
   .socialsLink img {
-    width: 80%;
-    max-width: 100px;
-    height: auto;
-    transition: transform 0.3s;
+    max-width: 40px; /* Further reduce image size for smaller screens */
   }
-  
-  .socialsLink img:hover {
-    transform: scale(1.1);
-  }
-  
-  @media (max-width: 700px) {
-    .socialsLink {
-      width: 60px;
-    }
-  
-    .socialsLink img {
-      max-width: 50px;
-    }
-  }
-  
+}

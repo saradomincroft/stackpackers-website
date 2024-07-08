@@ -60,7 +60,7 @@ export default function Home() {
       </div>
       <div className="image-gallery">
         <ImageSlideIn ref={(el) => (imageRefs.current[0] = el)} src="/img/touchbass.jpg" alt="Stackpackers at Touch Bass / Twisted Audio" />
-        <p className="photo-credit">Photo by <a href="https://www.instagram.com/larkzvisuals_events/">Larkz Visuals</a></p>
+        <p className="photo-credit">Photo by <a href="https://www.instagram.com/larkzvisuals_events/" target="_blank" rel="noopener noreferrer">Larkz Visuals</a></p>
       </div>
     </div>
   );
