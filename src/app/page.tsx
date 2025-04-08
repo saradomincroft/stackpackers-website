@@ -5,11 +5,16 @@ import LightningOverlay from "@/components/LightningOverlay";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col container mx-auto">
+    <main className="flex min-h-screen flex-col container mx-auto relative">
+      {/* Overlays behind content */}
       <ParticleOverlay />
       <LightningOverlay />
-      <HeroSection />
-      <About />
+
+      {/* Main content */}
+      <div className="relative z-10">
+        <HeroSection />
+        <About />
+      </div>
     </main>
   );
 }

@@ -1,0 +1,23 @@
+@keyframes burstIn {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+      filter: drop-shadow(0 0 0 rgba(0, 255, 255, 0));
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.2))
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+    }
+  }
+  
+  .burstIn {
+    animation: burstIn 1s ease-out forwards;
+    will-change: transform, opacity, filter;
+  }
+  

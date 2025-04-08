@@ -1,145 +1,176 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-const LightningCanvas = () => {
+const LightningOverlay = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationFrameRef = useRef<number | null>(null);
+  const boltsRef = useRef<Lightning[]>([]);
 
-  useEffect(() => {
-    // Grab canvas and its 2D context
-    const canvas = canvasRef.current!;
-    const ctx = canvas.getContext("2d")!;
+  class Lightning {
+    points: { x: number; y: number }[] = [];
+    forks: Lightning[] = [];
+    life = 0;
+    maxLife = 20 + Math.random() * 30;
+    color: string;
 
-    // Set canvas to fill the screen
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    constructor(
+      public startX: number,
+      public startY: number,
+      public endX: number,
+      public endY: number,
+      public forkLevel = 0
+    ) {
+      this.color = Math.random() > 0.5 ? "#00faff" : "#fff800";
+      this.generatePoints();
 
-    // Lightning bolt class
-    class Lightning {
-      points: { x: number; y: number }[] = []; // Zig-zag path points
-      forks: Lightning[] = [];                // Array of branches from this bolt
-      life = 0;                               // How long this bolt has existed
-      maxLife = 35 + Math.random() * 50;      // How long this bolt will last
-      color: string;                          // Bolt color (blue or yellow)
-
-      constructor(
-        public startX: number,
-        public startY: number,
-        public endX: number,
-        public endY: number,
-        public forkLevel = 0 
-      ) {
-        this.color = Math.random() > 0.5 ? "#00faff" : "#fff800";
-
-        this.generatePoints(); // Create bolt path
-
-        // Optionally add forks if not too deep
-        if (forkLevel < 2) {
-          const numForks = Math.floor(Math.random() * 2);
-          for (let i = 0; i < numForks; i++) {
-            const forkIndex = Math.floor(this.points.length * Math.random()); // Random point to fork from
-            const forkStart = this.points[forkIndex];
-            const angle = Math.random() * Math.PI * 2; // Random angle
-            const distance = 50 + Math.random() * 50;
-            const forkEndX = forkStart.x + Math.cos(angle) * distance;
-            const forkEndY = forkStart.y + Math.sin(angle) * distance;
-
-            // Add a new Lightning instance as a fork
-            this.forks.push(
-              new Lightning(forkStart.x, forkStart.y, forkEndX, forkEndY, forkLevel + 1)
-            );
-          }
+      if (forkLevel < 2) {
+        const numForks = Math.floor(Math.random() * 2);
+        for (let i = 0; i < numForks; i++) {
+          const forkIndex = Math.floor(Math.random() * this.points.length);
+          const forkStart = this.points[forkIndex];
+          const angle = Math.random() * Math.PI * 2;
+          const distance = 50 + Math.random() * 50;
+          const forkEndX = forkStart.x + Math.cos(angle) * distance;
+          const forkEndY = forkStart.y + Math.sin(angle) * distance;
+          this.forks.push(new Lightning(forkStart.x, forkStart.y, forkEndX, forkEndY, forkLevel + 1));
         }
-      }
-
-      // Build a path of zigzag points from start to end
-      generatePoints() {
-        const steps = 20;
-        const dx = (this.endX - this.startX) / steps;
-        const dy = (this.endY - this.startY) / steps;
-        let x = this.startX;
-        let y = this.startY;
-
-        for (let i = 0; i < steps; i++) {
-          x += dx + (Math.random() - 0.5) * 30; // Add random jitter
-          y += dy + (Math.random() - 0.5) * 30;
-          this.points.push({ x, y });
-        }
-      }
-
-      // Advance the bolt's lifetime and update forks
-      update() {
-        this.life++;
-        this.forks.forEach(f => f.update());
-      }
-
-      // Check if bolt should disappear
-      isDead() {
-        return this.life > this.maxLife;
-      }
-
-      // Draw the bolt to the canvas
-      draw(ctx: CanvasRenderingContext2D) {
-        ctx.save();
-        ctx.beginPath();
-        ctx.moveTo(this.startX, this.startY);
-        for (const p of this.points) {
-          ctx.lineTo(p.x, p.y); // Draw line to each point
-        }
-
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = 1.5;
-        ctx.shadowColor = this.color;
-        ctx.shadowBlur = 4; // Small glow
-        ctx.globalAlpha = 1 - this.life / this.maxLife; // Fade out over time
-        ctx.stroke();
-        ctx.restore();
-
-        // Recursively draw forks
-        this.forks.forEach(f => f.draw(ctx));
       }
     }
 
-    const bolts: Lightning[] = []; // Array of all active bolts
+    generatePoints() {
+      const steps = 20;
+      const dx = (this.endX - this.startX) / steps;
+      const dy = (this.endY - this.startY) / steps;
+      let x = this.startX;
+      let y = this.startY;
 
-    // Create a new lightning bolt at a random position
+      for (let i = 0; i < steps; i++) {
+        x += dx + (Math.random() - 0.5) * 30;
+        y += dy + (Math.random() - 0.5) * 30;
+        this.points.push({ x, y });
+      }
+    }
+
+    update() {
+      this.life++;
+      this.forks.forEach((f) => f.update());
+    }
+
+    isDead() {
+      return this.life > this.maxLife;
+    }
+
+    draw(ctx: CanvasRenderingContext2D) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(this.startX, this.startY);
+      for (const p of this.points) {
+        ctx.lineTo(p.x, p.y);
+      }
+      ctx.strokeStyle = this.color;
+      ctx.lineWidth = 1.5;
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur = 10;
+      ctx.globalAlpha = 1 - this.life / this.maxLife;
+      ctx.stroke();
+      ctx.restore();
+
+      this.forks.forEach((f) => f.draw(ctx));
+    }
+  }
+
+  useEffect(() => {
+    const canvas = canvasRef.current!;
+    const ctx = canvas.getContext("2d")!;
+    const bolts = boltsRef.current;
+
+    const setCanvasSize = () => {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+    };
+
+    setCanvasSize();
+
     const spawnBolt = () => {
       const startX = Math.random() * canvas.width;
-      const startY = Math.random() * canvas.height * 0.5;
+      const isTop = Math.random() > 0.5; // Randomly choose top or bottom
+      const startY = isTop ? 0 : canvas.height; // If top, start from 0; if bottom, start from the bottom of the canvas
       const endX = Math.random() * canvas.width;
-      const endY = startY + 100 + Math.random() * canvas.height * 0.5;
+      const endY = (isTop ? 150 + Math.random() * canvas.height * 0.5 : canvas.height - (150 + Math.random() * canvas.height * 0.5));
+
       bolts.push(new Lightning(startX, startY, endX, endY));
+
+      // Cap to 100 bolts
+      if (bolts.length > 50) {
+        bolts.splice(0, bolts.length - 100);
+      }
     };
 
-    // Main animation loop
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the screen
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      bolts.forEach((bolt, i) => {
+      for (let i = bolts.length - 1; i >= 0; i--) {
+        const bolt = bolts[i];
         bolt.update();
         bolt.draw(ctx);
-        if (bolt.isDead()) bolts.splice(i, 1); // Remove faded bolts
-      });
+        if (bolt.isDead()) {
+          bolts.splice(i, 1);
+        }
+      }
 
-      requestAnimationFrame(animate); // Continue animation
+      animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    // Regularly spawn new bolts
-    const interval = setInterval(() => {
-        const numBoltsToSpawn = Math.floor(Math.random() * 4) + 1;    for (let i = 0; i < numBoltsToSpawn; i++) {
+    const boltInterval: ReturnType<typeof setInterval> = setInterval(() => {
+      const numBoltsToSpawn = Math.floor(Math.random() * 4) + 1;
+      for (let i = 0; i < numBoltsToSpawn; i++) {
         spawnBolt();
-        }
-    }, 500); 
+      }
+    }, 500);
 
-    animate(); // Start animation
+    const flashOnClick = (e: MouseEvent) => {
+      for (let i = 0; i < 5; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 100 + Math.random() * 100;
+        const endX = e.clientX + Math.cos(angle) * distance;
+        const endY = e.clientY + Math.sin(angle) * distance;
+        bolts.push(new Lightning(e.clientX, e.clientY, endX, endY));
+      }
 
-    // Resize canvas when window changes
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
+      ctx.save();
+      ctx.fillStyle = "rgba(255, 255, 255, 0.15)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.restore();
+    };
 
-    // Cleanup on component unmount
-    return () => clearInterval(interval);
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        // When the tab is focused again, reset the canvas size and restart animation
+        setCanvasSize();
+        bolts.length = 0; // Clear bolts to restart fresh
+      }
+    };
+
+    // Event listeners
+    canvas.addEventListener("click", flashOnClick);
+    window.addEventListener("resize", setCanvasSize);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    animate();
+
+    return () => {
+      clearInterval(boltInterval);
+      if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
+      window.removeEventListener("resize", setCanvasSize);
+      canvas.removeEventListener("click", flashOnClick);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      bolts.length = 0;
+    };
   }, []);
 
   return (
@@ -151,11 +182,11 @@ const LightningCanvas = () => {
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: 9999,
-        pointerEvents: "none", 
+        zIndex: -1,
+        pointerEvents: "none",
       }}
     />
   );
 };
 
-export default LightningCanvas;
+export default LightningOverlay;
