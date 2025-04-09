@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://stackpackers.com
+
+# Sitemaps
+Sitemap: https://stackpackers.com/sitemap.xml
