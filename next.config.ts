@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import withSitemap from "next-sitemap";
 
 const nextConfig: NextConfig = {
   output: "export", // enables `next export` for static HTML
@@ -7,4 +8,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default nextConfig;
+export default withSitemap(nextConfig);

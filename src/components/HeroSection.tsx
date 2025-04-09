@@ -29,10 +29,11 @@ const HeroSection = () => {
         className={`relative w-[80vw] sm:w-[80vw] lg:w-[80vw] aspect-[16/9] ${
           burst ? `${styles.burstIn} ${styles.showGlow}` : "initialState"
         }`}
+        style={{ height: "auto" }}
       >
         <Image
           src="/img/Stackpackers-Logo.png"
-          alt="Stackpackers Logo - My Portfolio"
+          alt="Stackpackers Logo"
           fill
           className={`object-contain absolute top-0 left-0 transition-opacity duration-500 ${
             imageLoaded ? "opacity-100" : "opacity-0"
