@@ -41,6 +41,10 @@ const HeroSection = () => {
           onLoadingComplete={handleImageLoad}
         />
       </h1>
+    
+ 
+
+
     </header>
   );
 };

@@ -13,8 +13,11 @@ export const metadata: Metadata = {
     title: "Stackpackers",
     description:
       "⚡️ A storm in full force, shaking the scene with explosive sets and powerful soundscapes ⛈️",
+    url: "https://stackpackers.com",
+    siteName: "Stackpackers",
   },
 };
+//todo: add image and favicon
 
 export default function RootLayout({
   children,
