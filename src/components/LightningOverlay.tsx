@@ -171,7 +171,7 @@ const LightningOverlay = () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       bolts.length = 0;
     };
-  }, []);
+  },);
 
   return (
     <canvas

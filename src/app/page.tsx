@@ -1,15 +1,24 @@
+"use client";
 import Head from 'next/head';
+import Navbar from '@/components/Navbar';
 import HeroSection from "@/components/HeroSection";
-import About from "@/components/About";
+import Links from "@/components/Links";
+import Music from '@/components/Music';
 import ParticleOverlay from "@/components/ParticleOverlay";
 import LightningOverlay from "@/components/LightningOverlay";
+import { useEffect, useState } from 'react';
 
-export default async function Home() {
+export default function Home() {
+  const [showNavbar, setShowNavbar] = useState(false);
+  useEffect(() => {
+    setShowNavbar(true);
+  }, []);
+
   return (
     <>
       <Head>
-         {/* Meta Pixel Code */}
-         <script
+        {/* Meta Pixel Code */}
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
@@ -92,7 +101,11 @@ export default async function Home() {
           }}
         />
       </Head>
+
       <main className="flex min-h-screen flex-col container mx-auto relative">
+        {/* Navbar with fade-in effect */}
+        <Navbar isVisible={showNavbar} />
+
         {/* Overlays behind content */}
         <ParticleOverlay />
         <LightningOverlay />
@@ -100,7 +113,8 @@ export default async function Home() {
         {/* Main content */}
         <div className="relative z-10">
           <HeroSection />
-          <About />
+          <Links />
+          <Music />
         </div>
       </main>
     </>

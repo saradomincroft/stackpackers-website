@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Links.module.css"; // Ensure this CSS file exists
 
-const Music = () => {
+const Links = () => {
   const [hasScrolledIn, setHasScrolledIn] = useState(false);
 
   // List of link objects
@@ -27,10 +27,22 @@ const Music = () => {
     const sectionRect = linksSection.getBoundingClientRect();
     const sectionTop = sectionRect.top;
 
-    // If the top of the section is within the viewport and hasn't triggered yet
-    if (sectionTop <= window.innerHeight && sectionTop >= 0 && !hasScrolledIn) {
+    // If the section is entering the viewport, trigger the animation
+    if (sectionTop <= window.innerHeight && sectionTop > 0 && !hasScrolledIn) {
       setHasScrolledIn(true);
     }
+
+    // Activate individual link animations when they are in the viewport
+    const linkElements = document.querySelectorAll(`.${styles.link}`);
+    linkElements.forEach((link) => {
+      const linkRect = link.getBoundingClientRect();
+      const linkTop = linkRect.top;
+
+      // If link is in the viewport, add 'active' class to trigger animation
+      if (linkTop <= window.innerHeight && linkTop >= 0) {
+        link.classList.add(styles.active);
+      }
+    });
   };
 
   useEffect(() => {
@@ -38,16 +50,15 @@ const Music = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, ); // Dependency to ensure effect happens only once
+  }, );
 
   return (
     <div
       id="links-section"
       className={`${styles.linksSection} ${
         hasScrolledIn ? styles.visible : ""
-      } min-h-screen flex flex-col items-center justify-center px-4`}
+      } flex flex-col items-center justify-center px-4`}
     >
-      <h2 className="text-2xl font-bold mb-8"></h2>
       <div className={`${styles.linksContainer}`}>
         {/* Dynamically render the links */}
         {links.map((link, index) => (
@@ -55,7 +66,7 @@ const Music = () => {
             key={index}
             className={`${styles.link} ${
               index % 2 === 0 ? styles.left : styles.right
-            } ${hasScrolledIn ? styles.active : ""}`}
+            }`}
           >
             <a
               href={link.href}
@@ -72,4 +83,4 @@ const Music = () => {
   );
 };
 
-export default Music;
+export default Links;

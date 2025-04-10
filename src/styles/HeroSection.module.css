@@ -1,25 +1,64 @@
+/* Burst In Effect for the Logo */
 @keyframes burstIn {
-    0% {
-      opacity: 0;
-      transform: scale(0);
-      filter: drop-shadow(0 0 0 rgba(0, 255, 255, 0));
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.2))
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-      filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    filter: drop-shadow(0 0 0 rgba(0, 255, 255, 0));
   }
-  
-  .burstIn {
-    animation: burstIn 1s ease-out forwards;
-    will-change: transform, opacity, filter;
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.2));
   }
-  
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+  }
+}
 
-  
+.burstIn {
+  animation: burstIn 1s ease-out forwards;
+  will-change: transform, opacity, filter;
+}
+
+/* Arrow Fade-In */
+.arrow-fade-in {
+  animation: arrowMove 1s ease-in-out forwards;
+}
+
+.arrow {
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+}
+@keyframes arrowMove {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Glowing Arrow*/
+.arrowGlow {
+  animation: arrowGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowGlow {
+  0% {
+    filter: drop-shadow(0 0 8px #ffffff) drop-shadow(0 0 15px #ffffff) drop-shadow(0 0 25px #ffffff);
+  }
+  50% {
+    filter: drop-shadow(0 0 18px #ffffff) drop-shadow(0 0 30px #ffffff) drop-shadow(0 0 40px #ffffff);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px #ffffff) drop-shadow(0 0 15px #ffffff) drop-shadow(0 0 25px #ffffff);
+  }
+}
+
+.arrowGlowAndBurst {
+  animation: arrowGlow 1.5s ease-in-out infinite, burstIn 1s ease-out forwards;
+  will-change: transform, opacity, filter;
+}

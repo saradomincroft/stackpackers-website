@@ -1,0 +1,10 @@
+/* Navbar.module.css */
+.navbar {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Adjust time as needed */
+  }
+  
+  .navbar.visible {
+    opacity: 1;
+  }
+  
