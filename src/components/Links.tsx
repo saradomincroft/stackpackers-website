@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import styles from "../styles/Links.module.css"; // Ensure this CSS file exists
+import styles from "../styles/Links.module.css";
 
 const Links = () => {
   const [hasScrolledIn, setHasScrolledIn] = useState(false);

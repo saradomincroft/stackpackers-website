@@ -9,6 +9,7 @@
   --dark-space: #010101;
   --white: #F1F1F1;
   --light-steel: #B0BEC5;  
+  --electric-yellow: #fff800;
 }
 
 body {
@@ -66,3 +67,4 @@ body {
     transform: translate(-25px, -10px);
   }
 }
+

@@ -14,6 +14,7 @@ module.exports = {
         darkSpace: 'var(--dark-space)',
         white: 'var(--white)',
         lightSteel: 'var(--light-steel)',
+        electricYellow: 'var(--electric-yellow)',
       },
     },
   },

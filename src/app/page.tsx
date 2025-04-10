@@ -7,6 +7,7 @@ import Music from '@/components/Music';
 import ParticleOverlay from "@/components/ParticleOverlay";
 import LightningOverlay from "@/components/LightningOverlay";
 import { useEffect, useState } from 'react';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -111,11 +112,13 @@ export default function Home() {
         <LightningOverlay />
 
         {/* Main content */}
-        <div className="relative z-10">
-          <HeroSection />
-          <Links />
-          <Music />
-        </div>
+        <div className="relative z-10 mask-fade-top">
+        <HeroSection />
+        <Links />
+        <Music />
+        <Contact />
+      </div>
+
       </main>
     </>
   );
