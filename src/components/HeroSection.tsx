@@ -78,12 +78,12 @@ const HeroSection = () => {
       yellowPath.setAttribute("fill", "none");
 
       setTimeout(() => {
-        yellowPath.style.transition = "stroke-dashoffset 2s ease-out";
+        yellowPath.style.transition = "stroke-dashoffset 1s ease-out";
         yellowPath.style.strokeDashoffset = "0";
 
         setTimeout(() => {
           yellowPath.setAttribute("fill", "#ffffff");
-        }, 2000);
+        }, 1000);
       }, 50);
     }
   }, [drawing]);
@@ -129,7 +129,7 @@ const HeroSection = () => {
             <svg
               viewBox="100 30 150 300"
               xmlns="http://www.w3.org/2000/svg"
-              className={`w-16 sm:w-24 md:w-24 lg:w-32 h-auto ${styles.arrowFadeIn} ${styles.arrowGlowAndBurst}`}
+              className={`w-12 sm:w-24 md:w-24 lg:w-32 h-auto ${styles.arrowFadeIn} ${styles.arrowGlowAndBurst}`}
               onClick={handleArrowClick}
               style={{ cursor: "pointer" }}
             >
