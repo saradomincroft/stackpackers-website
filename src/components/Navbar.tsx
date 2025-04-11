@@ -49,9 +49,9 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
         </li>
         <li
           className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "gallery" ? "text-yellow-500" : "text-white"
+            activeLink === "shows" ? "#fff800" : "text-white"
           } hover:text-gray-400`}
-          onClick={(e) => handleClick("gallery", "gallery-section", e)}
+          onClick={(e) => handleClick("shows", "shows-section", e)}
         >
           Gallery
         </li>

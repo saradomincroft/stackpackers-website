@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+html {
+  scroll-padding-top: 3rem;
+}
 
 :root {
   --space-blue: #001f3d; 

@@ -113,11 +113,11 @@ export default function Home() {
 
         {/* Main content */}
         <div className="relative z-10 mask-fade-top">
-        <HeroSection />
-        <Links />
-        <Music />
-        <Contact />
-      </div>
+          <HeroSection />
+          <Links />
+          <Music />
+          <Contact />
+        </div>
 
       </main>
     </>
