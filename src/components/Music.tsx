@@ -10,7 +10,7 @@ const Music: React.FC = () => {
       }}
       className="flex items-center justify-center"
     >
-      <h2>Shows Section</h2>
+      <h2 className="sr-only">Music</h2>    
     </div>
   );
 };

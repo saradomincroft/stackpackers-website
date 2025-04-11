@@ -37,8 +37,9 @@ const Info = () => {
       id="info-section"
       ref={sectionRef}
       className="w-full flex flex-col items-center justify-center"
-      style={{ scrollMarginTop: "2rem" }}
+      // style={{ scrollMarginTop: "2rem" }}
     >
+      <h2 className="sr-only">Info</h2>
       {/* 1. SPOTIFY IFRAME */}
       <div
         className={`transition-all duration-1000 ease-in-out transform ${
@@ -92,16 +93,21 @@ const Info = () => {
         <div className="p-6" style={{ backgroundColor: "rgba(0, 31, 61, 0.8)" }}>
           <p className="text-sm sm:text-base md:text-lg leading-relaxed">
             Stackpackers are a storm in full force. This cheeky duo shares a
-            chemistry that&apos;s electric, unpredictable, and experimental.
+            chemistry that&apos;s electric, unpredictable, and experimental. 
+            Blending old and new, their sets are an ever-changing journey.
             <br/><br/>
-            Blending old and new, their sets are a freestyle, ever-changing
-            journey. With drum & bass at the heart of their sound, Stackpackers
+            With drum & bass at the heart of their sound, Stackpackers
             have made their mark with amped-up, power-packed DnB sets that keep
             the dance floor charged. However, it&apos;s not all thunder and
-            lightning – they know exactly when to bring it down with emotional,
+            lightning, they know exactly when to bring it down with emotional,
             moody liquid, proving they&apos;re as versatile as they are energetic.
-            <br />
-            <br />
+            <br /><br />
+            From bass heavy DnB to soulful liquid, Stackpackers bring the kind of 
+            energy that makes every set and song unique and every performance a new 
+            adventure. Aside from DnB, they explore house, psytrance, 140, and UKG, 
+            always adding fresh twists and surprises to their sets. Each performance 
+            is a sonic adventure full of unexpected moments.
+            <br /><br />
             In the production space, their tracks have found a home with those
             who seek unfiltered chaos and a fresh take on the underground sound.
           </p>
@@ -150,19 +156,6 @@ const Info = () => {
             fontWeight: "100",
           }}
         >
-          <a
-            href="https://soundcloud.com/stackpackers"
-            title="Stackpackers"
-            target="_blank"
-            style={{ color: "#cccccc", textDecoration: "none" }}
-          ></a>{" "}
-          ·{" "}
-          <a
-            href="https://soundcloud.com/stackpackers/sets/latest-track/s-hbc6PvIsmbw"
-            title="Latest Track"
-            target="_blank"
-            style={{ color: "#cccccc", textDecoration: "none" }}
-          ></a>
         </div>
       </div>
 

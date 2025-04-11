@@ -8,43 +8,45 @@ type NavbarProps = {
 
 const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
   const [activeLink, setActiveLink] = useState<string>("hero-section");
+  const [menuOpen, setMenuOpen] = useState(false);
   const navbarHeight = 60;
+
+  const sections = [
+    { id: "hero-section", label: "Home" },
+    { id: "info-section", label: "Info" },
+    { id: "links-section", label: "Links" },
+    { id: "music-section", label: "Music" },
+    { id: "shows-section", label: "Shows" },
+    { id: "contact-section", label: "Contact" },
+  ];
 
   const handleClick = (link: string, sectionId: string, e: React.MouseEvent) => {
     e.preventDefault();
-    setActiveLink(link);
-
+    setActiveLink(sectionId);
+    setMenuOpen(false);
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   const handleScroll = () => {
-    const sections = ["hero-section", "info-section", "links-section", "music-section", "shows-section", "contact-section"];
-    let found = false;
-
-    sections.forEach((sectionId) => {
-      const section = document.getElementById(sectionId);
-      if (section && !found) {
+    for (const { id } of sections) {
+      const section = document.getElementById(id);
+      if (section) {
         const rect = section.getBoundingClientRect();
         if (rect.top <= navbarHeight && rect.bottom >= window.innerHeight / 2) {
-          setActiveLink(sectionId);
-          found = true;
+          setActiveLink(id);
+          break;
         }
       }
-    });
+    }
   };
 
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -56,61 +58,69 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
         transition: "opacity 1s ease-in-out 1s",
       }}
     >
-      <ul className="flex justify-center items-center p-4 space-x-8">
-        <li
-          className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "hero-section" ? "active-link" : "link"
-          }`}
-          onClick={(e) => handleClick("home", "hero-section", e)}
-        >
-          Home
-        </li>
-        <li
-          className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "info-section" ? "active-link" : "link"
-          }`}
-          onClick={(e) => handleClick("info", "info-section", e)}
-        >
-          Info
-        </li>
-        <li
-          className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "links-section" ? "active-link" : "link"
-          }`}
-          onClick={(e) => handleClick("links", "links-section", e)}
-        >
-          Links
-        </li>
-        <li
-          className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "music-section" ? "active-link" : "link"
-          }`}
-          onClick={(e) => handleClick("music", "music-section", e)}
-        >
-          Music
-        </li>
-        <li
-          className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "shows-section" ? "active-link" : "link"
-          }`}
-          onClick={(e) => handleClick("shows", "shows-section", e)}
-        >
-          Shows
-        </li>
-        <li
-          className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "contact-section" ? "active-link" : "link"
-          }`}
-          onClick={(e) => handleClick("contact", "contact-section", e)}
-        >
-          Contact
-        </li>
+      {/* Desktop nav */}
+      <ul className="hidden md:flex justify-center items-center p-4 space-x-8">
+        {sections.map(({ id, label }) => (
+          <li
+            key={id}
+            className={`font-bold cursor-pointer transition duration-300 ${
+              activeLink === id ? "active-link" : "link"
+            }`}
+            onClick={(e) => handleClick(label.toLowerCase(), id, e)}
+          >
+            {label}
+          </li>
+        ))}
       </ul>
 
+      {/* Mobile hamburger */}
+      <div className="md:hidden flex justify-between items-center p-2">
+        <span className=""></span>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{ color: "#ffea00" }}
+          className={`text-3xl focus:outline-none cursor-pointer transition-transform hover:scale-110 ${
+            menuOpen ? "scale-110" : ""
+          }`}
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile nav dropdown */}
+      {menuOpen && (
+  <ul
+    className="md:hidden flex flex-col items-center space-y-4"
+    style={{
+      height: '100vh',
+      margin: 0,
+      padding: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      overflowY: 'auto',
+    }}
+  >
+    {sections.map(({ id, label }) => (
+      <li
+        key={id}
+        className={`font-bold cursor-pointer transition duration-300 ${
+          activeLink === id ? "active-link" : "link"
+        }`}
+        onClick={(e) => handleClick(label.toLowerCase(), id, e)}
+      >
+        {label}
+      </li>
+    ))}
+  </ul>
+)}
+
+
+
       <style jsx>{`
-        /* Define the electric yellow color */
         .active-link {
-          color: #ffea00; /* Electric Yellow */
+          color: #ffea00;
         }
 
         .link {
@@ -118,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
         }
 
         .link:hover {
-          color: #ffea00; /* Electric Yellow on hover */
+          color: #ffea00;
         }
       `}</style>
     </nav>

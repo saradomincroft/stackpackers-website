@@ -55,28 +55,27 @@ const Links = () => {
         hasScrolledIn ? styles.visible : ""
       } flex flex-col items-center justify-center w-full md:w-[60vw] text-black text-left`}
     >
-  <div className={`${styles.linksContainer} w-full`}>
-    {links.map((link, index) => (
-      <div
-        key={index}
-        className={`${styles.link} ${
-          index % 2 === 0 ? styles.left : styles.right
-        }`}
-      >
-        <a
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full text-black"
-        >
-          {link.label}
-        </a>
+      <h2 className="sr-only">Links</h2>
+      <div className={`${styles.linksContainer} w-full`}>
+        {links.map((link, index) => (
+          <div
+            key={index}
+            className={`${styles.link} ${
+              index % 2 === 0 ? styles.left : styles.right
+            }`}
+          >
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-black"
+            >
+              {link.label}
+            </a>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
-
-
+    </div>
   );
 };
 

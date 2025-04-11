@@ -10,8 +10,8 @@ const Shows: React.FC = () => {
         }}
         className="flex items-center justify-center"
     >
-      <h2>Shows Section</h2>
-    </div>
+    <h2 className="sr-only">Shows</h2>    
+  </div>
   );
 };
 
