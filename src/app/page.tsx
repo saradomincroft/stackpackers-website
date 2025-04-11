@@ -10,6 +10,7 @@ import Links from "@/components/Links";
 import Music from '@/components/Music';
 import Shows from '@/components/Shows';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -121,8 +122,9 @@ export default function Home() {
           <Music />
           <Shows />
           <Contact />
-        </div>
+          <Footer />
 
+        </div>
       </main>
     </>
   );

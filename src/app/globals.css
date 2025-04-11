@@ -16,6 +16,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background: linear-gradient(45deg, var(--space-blue), var(--cosmic-blue), var(--neon-blue), var(--stellar-purple));
   background-size: 150% 150%;
   animation: gradientBackground 5s ease infinite;
