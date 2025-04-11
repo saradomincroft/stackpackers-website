@@ -10,13 +10,7 @@ const HeroSection = () => {
   const [arrowVisible, setArrowVisible] = useState(true);
   const [logoAnimationCompleted, setLogoAnimationCompleted] = useState(false);
   const [drawing, setDrawing] = useState(false);
-
-  // Typing the refs as SVGPathElement
   const yellowPathRef = useRef<SVGPathElement | null>(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls to the top of the page on refresh
-  }, []);
 
   useEffect(() => {
     if (!hasBurst) {
@@ -48,7 +42,7 @@ const HeroSection = () => {
 
   const handleArrowClick = () => {
     // Scroll to the next section
-    const mainSection = document.getElementById("main-section");
+    const mainSection = document.getElementById("info-section");
     if (mainSection) {
       mainSection.scrollIntoView({
         behavior: "smooth",
@@ -89,12 +83,12 @@ const HeroSection = () => {
   }, [drawing]);
 
   return (
-    <div>
+    <div        
+      id="hero-section"
+    >
       <header
-        id="hero-section"
         className="flex flex-col items-center justify-start"
-        style={{ height: "100vh" }}
-      >
+        style={{ minHeight: "calc(100vh - 4rem)" }}      >
         {/* Stackpackers Logo Container */}
         <div
           className="relative w-full flex justify-center mt-[4rem]"
@@ -148,15 +142,6 @@ const HeroSection = () => {
           </div>
         )}
       </header>
-      <main>
-        <div
-          id="main-section"
-          className="flex flex-col items-center justify-center h-screen bg-gray-100"
-        >
-          <h2 className="text-3xl font-bold">Main</h2>
-          <p className="mt-4 text-lg">Main placeholder.</p>
-        </div>
-      </main>
     </div>
   );
 };

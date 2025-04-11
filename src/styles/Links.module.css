@@ -1,84 +1,55 @@
-/* General Section Styling */
 .linksSection {
   opacity: 0;
   transition: opacity 1s ease;
-  padding-top: 0; /* Adjust the padding to bring the content higher */
-  margin-top: 0;  /* Remove or adjust any margin if needed */
-  width: 100%;
+  padding-top: 0;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 3rem 0;
+  width: 100%;
 }
 
-/* Make the section visible once it has scrolled in */
 .linksSection.visible {
   opacity: 1;
 }
 
-/* Container for Links */
 .linksContainer {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   gap: 12px;
-  width: 100%;
-  max-width: 600px; /* Max width */
-  align-items: center;
-  justify-content: center;
+  width: 80%;
 }
 
-/* Styling for individual Links */
 .link {
   background-color: white;
   padding: 12px 24px;
-  width: 100%; /* Stretch to the screen size */
-  max-width: 100%; /* Keep within bounds */
-  border-radius: 8px;
+  width: 100%;
+  border: 2px solid #fff800;
+  border-radius: 0px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-size: 1.2rem;
-  opacity: 0; /* Start invisible */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transform: translateY(50px); /* Start offscreen below */
-  transition: transform 1s ease, opacity 1s ease; /* Smooth opacity & sliding */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 1s ease, opacity 1s ease;
 }
 
-/* Sliding effect for left and right */
 .link.left {
-  transform: translateX(-50px); /* Start from the left */
+  transform: translateX(-50px);
 }
 
 .link.right {
-  transform: translateX(50px); /* Start from the right */
+  transform: translateX(50px);
 }
 
-/* When the Link becomes active */
 .link.active {
   opacity: 1;
-  transform: translateY(0) translateX(0); /* Slide into position */
+  transform: translateY(0) translateX(0);
 }
 
-/* Hover effect */
 .link:hover {
   background-color: #f0f0f0;
   cursor: pointer;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .link {
-    max-width: 90%;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .link {
-    max-width: 90%;
-    font-size: 0.9rem;
-  }
 }

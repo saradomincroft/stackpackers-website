@@ -5,6 +5,7 @@ import ParticleOverlay from "@/components/ParticleOverlay";
 import LightningOverlay from "@/components/LightningOverlay";
 import Navbar from '@/components/Navbar';
 import HeroSection from "@/components/HeroSection";
+import Info from "@/components/Info";
 import Links from "@/components/Links";
 import Music from '@/components/Music';
 import Shows from '@/components/Shows';
@@ -115,6 +116,7 @@ export default function Home() {
         {/* Main content */}
         <div className="relative z-10 mask-fade-top">
           <HeroSection />
+          <Info />
           <Links />
           <Music />
           <Shows />

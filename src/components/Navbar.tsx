@@ -9,7 +9,7 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
   const [activeLink, setActiveLink] = useState<string>("hero-section");
   const navbarHeight = 60;
-  
+
   const handleClick = (link: string, sectionId: string, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveLink(link);
@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
   };
 
   const handleScroll = () => {
-    const sections = ["hero-section", "links-section", "music-section", "shows-section", "contact-section"];
+    const sections = ["hero-section", "info-section", "links-section", "music-section", "shows-section", "contact-section"];
     let found = false;
 
     sections.forEach((sectionId) => {
@@ -64,6 +64,14 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
           onClick={(e) => handleClick("home", "hero-section", e)}
         >
           Home
+        </li>
+        <li
+          className={`font-bold cursor-pointer transition duration-300 ${
+            activeLink === "info-section" ? "active-link" : "link"
+          }`}
+          onClick={(e) => handleClick("info", "info-section", e)}
+        >
+          Info
         </li>
         <li
           className={`font-bold cursor-pointer transition duration-300 ${
