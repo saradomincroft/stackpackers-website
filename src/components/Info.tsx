@@ -119,7 +119,7 @@ const Info = () => {
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6`}
-        style={{ transitionDelay: inView ? "0.8s" : "0s" }}
+        style={{ transitionDelay: inView ? "0.6s" : "0s" }}
       >
         <video playsInline autoPlay loop muted className="w-full h-auto">
           <source src="/img/info-vid.mp4" type="video/mp4" />

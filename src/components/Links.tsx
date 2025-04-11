@@ -55,7 +55,6 @@ const Links = () => {
         hasScrolledIn ? styles.visible : ""
       } flex flex-col items-center justify-center w-full md:w-[60vw] text-black text-left`}
     >
-      <h2 className="sr-only">Links</h2>
       <div className={`${styles.linksContainer} w-full`}>
         {links.map((link, index) => (
           <div
@@ -76,6 +75,7 @@ const Links = () => {
         ))}
       </div>
     </div>
+
   );
 };
 

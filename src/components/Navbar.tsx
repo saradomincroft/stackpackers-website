@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  },);
 
   return (
     <nav
