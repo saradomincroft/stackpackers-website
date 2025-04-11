@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 
 type NavbarProps = {
   isVisible: boolean;
 };
 
 const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
-  const [activeLink, setActiveLink] = useState<string>("home");
-
+  const [activeLink, setActiveLink] = useState<string>("hero-section");
+  const navbarHeight = 60;
+  
   const handleClick = (link: string, sectionId: string, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveLink(link);
@@ -21,8 +23,33 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
     }
   };
 
+  const handleScroll = () => {
+    const sections = ["hero-section", "links-section", "music-section", "shows-section", "contact-section"];
+    let found = false;
+
+    sections.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section && !found) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= navbarHeight && rect.bottom >= window.innerHeight / 2) {
+          setActiveLink(sectionId);
+          found = true;
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-<nav className="fixed top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md"
+    <nav
+      className="fixed top-0 left-0 w-full z-50 bg-white/30 backdrop-blur-md"
       style={{
         backgroundColor: "var(--space-blue)",
         opacity: isVisible ? 0.8 : 0,
@@ -30,40 +57,62 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
       }}
     >
       <ul className="flex justify-center items-center p-4 space-x-8">
-        {/* Home link should just scroll, no "/" */}
         <li
           className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "home" ? "text-yellow-500" : "text-white"
-          } hover:text-gray-400`}
+            activeLink === "hero-section" ? "active-link" : "link"
+          }`}
           onClick={(e) => handleClick("home", "hero-section", e)}
         >
           Home
         </li>
         <li
           className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "links" ? "text-yellow-500" : "text-white"
-          } hover:text-gray-400`}
+            activeLink === "links-section" ? "active-link" : "link"
+          }`}
           onClick={(e) => handleClick("links", "links-section", e)}
         >
           Links
         </li>
         <li
           className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "shows" ? "#fff800" : "text-white"
-          } hover:text-gray-400`}
-          onClick={(e) => handleClick("shows", "shows-section", e)}
+            activeLink === "music-section" ? "active-link" : "link"
+          }`}
+          onClick={(e) => handleClick("music", "music-section", e)}
         >
-          Gallery
+          Music
         </li>
         <li
           className={`font-bold cursor-pointer transition duration-300 ${
-            activeLink === "contact" ? "text-yellow-500" : "text-white"
-          } hover:text-gray-400`}
+            activeLink === "shows-section" ? "active-link" : "link"
+          }`}
+          onClick={(e) => handleClick("shows", "shows-section", e)}
+        >
+          Shows
+        </li>
+        <li
+          className={`font-bold cursor-pointer transition duration-300 ${
+            activeLink === "contact-section" ? "active-link" : "link"
+          }`}
           onClick={(e) => handleClick("contact", "contact-section", e)}
         >
           Contact
         </li>
       </ul>
+
+      <style jsx>{`
+        /* Define the electric yellow color */
+        .active-link {
+          color: #ffea00; /* Electric Yellow */
+        }
+
+        .link {
+          color: white;
+        }
+
+        .link:hover {
+          color: #ffea00; /* Electric Yellow on hover */
+        }
+      `}</style>
     </nav>
   );
 };

@@ -1,12 +1,13 @@
 "use client";
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import ParticleOverlay from "@/components/ParticleOverlay";
+import LightningOverlay from "@/components/LightningOverlay";
 import Navbar from '@/components/Navbar';
 import HeroSection from "@/components/HeroSection";
 import Links from "@/components/Links";
 import Music from '@/components/Music';
-import ParticleOverlay from "@/components/ParticleOverlay";
-import LightningOverlay from "@/components/LightningOverlay";
-import { useEffect, useState } from 'react';
+import Shows from '@/components/Shows';
 import Contact from '@/components/Contact';
 
 export default function Home() {
@@ -116,6 +117,7 @@ export default function Home() {
           <HeroSection />
           <Links />
           <Music />
+          <Shows />
           <Contact />
         </div>
 
