@@ -20,12 +20,13 @@ const Info = () => {
       id="info-section"
       ref={sectionRef}
       className="w-full flex flex-col items-center justify-center"
-      style={{ scrollMarginTop: "2rem" }}    >
-      {/* IMAGE */}
-      <div
-        className={`transition-all duration-1000 ease-in-out transform ${
-          inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
-        } w-[80%] aspect-[21/9] mb-4`}
+      style={{ scrollMarginTop: "2rem" }}
+    >
+    {/* IMAGE */}
+    <div
+      className={`transition-all duration-1000 ease-in-out transform ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
+      } w-[80%] aspect-[21/9] mb-4`}
       >
         <Image
           src="/img/profile-banner.jpg"
@@ -63,6 +64,17 @@ const Info = () => {
             who seek unfiltered chaos and a fresh take on the underground sound.
           </p>
         </div>
+      </div>
+       {/* VIDEO */}
+       <div
+          className={`transition-all duration-1000 ease-in-out transform ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          } w-[80%] mt-6`}
+        >
+        <video playsInline autoPlay loop muted className="w-full h-auto">
+          <source src="/img/info-vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
   );
