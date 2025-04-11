@@ -9,13 +9,28 @@ const Info = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setInView(true);
+        if (entry.isIntersecting) {
+          setInView(true);
+        }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
+  
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setInView(false);
+      }
+    };
+  
     if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll);
+  
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+  
 
   return (
     <section
