@@ -51,13 +51,14 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-50"
+      className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-opacity duration-1000 delay-1000`}
       style={{
-        backgroundColor: "#003366",
-        opacity: isVisible ? 0.8 : 0,
-        transition: "opacity 1s ease-in-out 1s",
+        backgroundColor: "rgba(0, 51, 102, 0.5)",
+        opacity: isVisible ? 1 : 0,
+        WebkitBackdropFilter: "blur(10px)",
       }}
     >
+
       {/* Desktop nav */}
       <ul className="hidden md:flex justify-center items-center py-3 space-x-6">
         {sections.map(({ id, label }) => (

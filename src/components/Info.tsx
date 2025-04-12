@@ -133,8 +133,6 @@ const Info = () => {
         <iframe
           width="100%"
           height="120"
-          scrolling="no"
-          frameBorder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2003590828%3Fsecret_token%3Ds-hbc6PvIsmbw&color=%23fff800&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
         ></iframe>
