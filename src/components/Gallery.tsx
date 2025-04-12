@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const Info = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -72,9 +73,11 @@ const Info = () => {
         } w-[80%] aspect-[21/9] mb-6`}
         style={{ transitionDelay: inView ? "0.4s" : "0s" }}
       >
-        <img
+        <Image
           src="/img/profile-banner.jpg"
           alt="Stackpackers Duo"
+          width={1920}
+          height={823}
           className="w-full h-full object-cover"
         />
       </div>

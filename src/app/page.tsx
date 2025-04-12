@@ -11,6 +11,7 @@ import Music from '@/components/Music';
 import Shows from '@/components/Shows';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Gallery from '@/components/Gallery';
 
 export default function Home() {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -118,9 +119,11 @@ export default function Home() {
         <div className="relative z-10 mask-fade-top">
           <HeroSection />
           <Info />
-          <Links />
+          {/* <Video /> */}
+          <Gallery />
           <Music />
           <Shows />
+          <Links />
           <Contact />
           <Footer />
 

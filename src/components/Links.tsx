@@ -7,16 +7,16 @@ const Links = () => {
 
   // List of link objects
   const links = [
+    { href: "https://facebook.com", label: "TikTok" },
+    { href: "https://www.tiktok.com", label: "Instagram" },
     { href: "https://facebook.com", label: "Facebook" },
-    { href: "https://www.tiktok.com", label: "TikTok" },
-    { href: "https://facebook.com", label: "Facebook" },
-    { href: "https://www.tiktok.com", label: "TikTok" },
-    { href: "https://facebook.com", label: "Facebook" },
-    { href: "https://www.tiktok.com", label: "TikTok" },
-    { href: "https://facebook.com", label: "Facebook" },
-    { href: "https://www.tiktok.com", label: "TikTok" },
-    { href: "https://facebook.com", label: "Facebook" },
-    { href: "https://www.tiktok.com", label: "TikTok" },
+    { href: "https://facebook.com", label: "Spotify" },
+    { href: "https://www.tiktok.com", label: "YouTube" },
+    { href: "https://facebook.com", label: "Soundcloud" },
+    { href: "https://www.tiktok.com", label: "Beatport" },
+    { href: "https://www.tiktok.com", label: "Apple Music" },
+    { href: "https://facebook.com", label: "Amazon Music" },
+    { href: "https://www.tiktok.com", label: "Bandcamp" },
   ];
 
   const handleScroll = () => {

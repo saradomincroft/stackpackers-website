@@ -101,14 +101,14 @@ const HeroSection = () => {
             style={{ height: "auto" }}
           >
             <Image
-              src="/img/Stackpackers-Logo.png"
+              src="/img/stackpackers-logo.png"
               alt="Stackpackers Logo"
               fill
               className={`object-contain absolute top-0 left-0 transition-opacity duration-500 ${
                 imageLoaded ? "opacity-100" : "opacity-0"
               }`}
               priority
-              onLoadingComplete={handleImageLoad}
+              onLoad={handleImageLoad}
             />
           </h1>
         </div>

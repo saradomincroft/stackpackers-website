@@ -9,15 +9,15 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
   const [activeLink, setActiveLink] = useState<string>("hero-section");
   const [menuOpen, setMenuOpen] = useState(false);
-  const navbarHeight = 60; // Height of the navbar (can be adjusted)
+  const navbarHeight = 60;
 
   const sections = [
-    { id: "hero-section", label: "Home" },
-    { id: "info-section", label: "Info" },
-    { id: "links-section", label: "Links" },
-    { id: "music-section", label: "Music" },
-    { id: "shows-section", label: "Shows" },
-    { id: "contact-section", label: "Contact" },
+    { id: "hero-section", label: "HOME" },
+    { id: "info-section", label: "INFO" },
+    { id: "music-section", label: "MUSIC" },
+    { id: "shows-section", label: "SHOWS" },
+    { id: "links-section", label: "LINKS" },
+    { id: "contact-section", label: "CONTACT" },
   ];
 
   const handleClick = (link: string, sectionId: string, e: React.MouseEvent) => {
