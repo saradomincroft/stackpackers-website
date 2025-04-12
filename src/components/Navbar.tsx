@@ -50,15 +50,15 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
   },);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-opacity duration-1000 delay-1000`}
-      style={{
-        backgroundColor: "rgba(0, 51, 102, 0.5)",
-        opacity: isVisible ? 1 : 0,
-        WebkitBackdropFilter: "blur(10px)",
-      }}
-    >
-
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-opacity duration-1000 delay-1000`}
+        style={{
+          backgroundColor: "rgba(0, 51, 102, 0.5)",
+          opacity: isVisible ? 1 : 0,
+          WebkitBackdropFilter: "blur(10px)",
+        }}
+      >
       {/* Desktop nav */}
       <ul className="hidden md:flex justify-center items-center py-3 space-x-6">
         {sections.map(({ id, label }) => (
@@ -73,7 +73,34 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
           </li>
         ))}
       </ul>
+      <style jsx>{`
+        /* Desktop Link Styles */
+        .active-link-desktop {
+          color: #ffea00;
+        }
 
+        .link-desktop {
+          color: white;
+          transition: background-color 0.3s ease-in-out;
+          font-weight: 500; /* Adjusted font weight for a lighter look */
+        }
+
+        .link-desktop:hover {
+          color: #ffea00;
+          background-color: transparent; /* Removed hover background for desktop */
+        }
+      `}</style>
+    </nav>
+    
+    <nav
+      className="fixed top-0 left-0 w-full z-50"
+      style={{
+        backgroundColor: "rgba(0, 51, 102, 1)",
+        opacity: isVisible ? 0.9 : 0,
+        WebkitBackdropFilter: "blur(100px)",
+        transition: "opacity 1s ease-in-out 1s",
+      }}
+    >
       {/* Mobile hamburger */}
       <div className="md:hidden flex justify-between items-center p-2">
         <span className="flex-1"></span>
@@ -95,9 +122,9 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
         className="md:hidden fixed top-0 right-0 w-full h-full transition-transform duration-500 ease-in-out"
         style={{
           transform: menuOpen ? "translateX(0)" : "translateX(100%)",
-          zIndex: 40,
+          zIndex: 50,
           backgroundColor: "#003366",
-          backdropFilter: "blur(80px)",
+          backdropFilter: "blur(100px)",
         }}
       >
         <ul
@@ -126,22 +153,6 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
       </div>
 
       <style jsx>{`
-        /* Desktop Link Styles */
-        .active-link-desktop {
-          color: #ffea00;
-        }
-
-        .link-desktop {
-          color: white;
-          transition: background-color 0.3s ease-in-out;
-          font-weight: 500; /* Adjusted font weight for a lighter look */
-        }
-
-        .link-desktop:hover {
-          color: #ffea00;
-          background-color: transparent; /* Removed hover background for desktop */
-        }
-
         /* Mobile Link Styles */
         .active-link-mobile {
           color: #ffea00;
@@ -168,6 +179,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
         }
       `}</style>
     </nav>
+    </>
   );
 };
 
