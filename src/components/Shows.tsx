@@ -48,7 +48,7 @@ export default function Shows() {
     <div
       id="shows-section"
       ref={sectionRef}
-      className="py-2 text-white "
+      className="py-4 text-white "
     >
       <h2 className="sr-only">Shows</h2>
       <div

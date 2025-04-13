@@ -38,12 +38,11 @@ const Info = () => {
       className="w-full flex flex-col items-center justify-center"
     >
       <h2 className="sr-only">Info</h2>
-
-      {/* 1. SPOTIFY IFRAME */}
+      {/* SPOTIFY IFRAME */}
       <div
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-        } w-[80%] mt-6 mb-6 overflow-hidden`}
+        } w-[80%] mt-6 overflow-hidden`}
         style={{
           backgroundColor: "#202020",
           transitionDelay: inView ? "0.2s" : "0s",
@@ -64,31 +63,31 @@ const Info = () => {
           }}
         ></iframe>
       </div>
+       
 
-      {/* 2. PRESS IMAGE */}
+      {/* VIDEO */}
       <div
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-        } w-[80%] aspect-[21/9] mb-6`}
+        } w-[80%] mt-6`}
         style={{ transitionDelay: inView ? "0.4s" : "0s" }}
       >
-        <img
-          src="/img/profile-banner.jpg"
-          alt="Stackpackers Duo"
-          className="w-full h-full object-cover"
-        />
+        <video playsInline autoPlay loop muted className="w-full h-auto">
+          <source src="/img/info-vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
-      {/* 3. BIO TEXT */}
+      {/* BIO TEXT */}
       <div
-        className={`transition-all duration-1000 ease-in-out transform ${
+        className={`transition-all duration-1000 ease-in-out transform mt-6 ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] text-white text-left`}
         style={{ transitionDelay: inView ? "0.6s" : "0s" }}
       >
         <div className="p-6" style={{ backgroundColor: "rgba(0, 31, 61, 0.8)" }}>
           <p className="text-sm sm:text-base md:text-lg leading-relaxed">
-            Stackpackers are a storm in full force. This cheeky duo shares a
+            Stackpackers are a storm in full force, sharing a
             chemistry that&apos;s electric, unpredictable, and experimental. 
             Blending old and new, their sets are an ever-changing journey.
             <br/><br/>
@@ -110,20 +109,22 @@ const Info = () => {
         </div>
       </div>
 
-      {/* 4. VIDEO */}
+      {/* PRESS IMAGE */}
       <div
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-        } w-[80%] mt-6`}
+        } w-[80%] aspect-[21/9] mt-6`}
         style={{ transitionDelay: inView ? "0.8s" : "0s" }}
       >
-        <video playsInline autoPlay loop muted className="w-full h-auto">
-          <source src="/img/info-vid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <img
+          src="/img/profile-banner.jpg"
+          alt="Stackpackers Duo"
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      {/* 5. SOUNDCLOUD IFRAME */}
+      
+      {/* SOUNDCLOUD IFRAME */}
       <div
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
@@ -156,7 +157,7 @@ const Info = () => {
       <div
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-        } w-[80%] mt-6 mb-12`}
+        } w-[80%] mt-6`}
         style={{ transitionDelay: inView ? "1.4s" : "0s" }}
       >
         <img

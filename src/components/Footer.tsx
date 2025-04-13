@@ -2,14 +2,14 @@
 "use client";
 
 const socialLinks = [
-  { href: "https://tiktok.com", src: "/img/icons/tiktok.svg", alt: "TikTok" },
-  { href: "https://instagram.com", src: "/img/icons/instagram.svg", alt: "Instagram" },
-  { href: "https://facebook.com", src: "/img/icons/facebook.svg", alt: "Facebook" },
-  { href: "https://beatport.com", src: "/img/icons/beatport.svg", alt: "Beatport" },
-  { href: "https://spotify.com", src: "/img/icons/spotify.svg", alt: "Spotify" },
-  { href: "https://youtube.com", src: "/img/icons/youtube.svg", alt: "YouTube" },
-  { href: "https://soundcloud.com", src: "/img/icons/soundcloud.svg", alt: "SoundCloud" },
-  { href: "https://music.apple.com", src: "/img/icons/apple.svg", alt: "Apple Music" },
+  { href: "https://www.tiktok.com/@stackpackers", src: "/img/icons/tiktok.svg", alt: "TikTok" },
+  { href: "https://instagram.com/stackpackers", src: "/img/icons/instagram.svg", alt: "Instagram" },
+  { href: "https://facebook.com/stackpackers", src: "/img/icons/facebook.svg", alt: "Facebook" },
+  { href: "https://www.beatport.com/artist/stackpackers/1142861", src: "/img/icons/beatport.svg", alt: "Beatport" },
+  { href: "https://open.spotify.com/artist/6oPMjcVt82VYpcntvL2JqZ?si=UjX0Yg0hQ96CzT9vUlkBuw", src: "/img/icons/spotify.svg", alt: "Spotify" },
+  { href: "https://www.youtube.com/channel/UCDLU5AEO7qqnQXJPHlA9sPQ", src: "/img/icons/youtube.svg", alt: "YouTube" },
+  { href: "https://www.soundcloud.com/stackpackers", src: "/img/icons/soundcloud.svg", alt: "SoundCloud" },
+  { href: "https://music.apple.com/us/artist/stackpackers/1698648603", src: "/img/icons/apple.svg", alt: "Apple Music" },
 ];
 
 const Footer = () => {

@@ -6,9 +6,9 @@ import LightningOverlay from "@/components/LightningOverlay";
 import Navbar from '@/components/Navbar';
 import HeroSection from "@/components/HeroSection";
 import Info from "@/components/Info";
-import Links from "@/components/Links";
 import Music from '@/components/Music';
 import Shows from '@/components/Shows';
+import Links from "@/components/Links";
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -118,7 +118,6 @@ export default function Home() {
         <div className="relative z-10 mask-fade-top">
           <HeroSection />
           <Info />
-          {/* <Video /> */}
           <Music />
           <Shows />
           <Links />

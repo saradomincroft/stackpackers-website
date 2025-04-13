@@ -68,11 +68,11 @@ export default function Music() {
     <div
       id="music-section"
       ref={sectionRef}
-      className="py-2 text-white "
+      className="py-4 text-white "
     >
       <h2 className="sr-only">Music</h2>
       <div
-        className={`grid grid-cols-3 gap-4 py-2 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
+        className={`grid grid-cols-3 gap-4 py-4 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         }`}
         style={{ transitionDelay: inView ? "0.3s" : "0s" }}
@@ -98,7 +98,7 @@ export default function Music() {
       <div
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-        } w-[80%] mx-auto mt-6`}
+        } w-[80%] mx-auto mt-4`}
         style={{ transitionDelay: inView ? "0.6s" : "0s" }}
       >
       <iframe
