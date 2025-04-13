@@ -68,7 +68,7 @@ export default function Music() {
     <div
       id="music-section"
       ref={sectionRef}
-      className="min-h-screen text-white "
+      className="py-2 text-white "
     >
       <h2 className="sr-only">Music</h2>
       <div
@@ -95,6 +95,19 @@ export default function Music() {
           </a>
         ))}
       </div>
+      <div
+        className={`transition-all duration-1000 ease-in-out transform ${
+          inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
+        } w-[80%] mx-auto mt-6`}
+        style={{ transitionDelay: inView ? "0.6s" : "0s" }}
+      >
+      <iframe
+        width="100%"
+        height="120"
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1938127935&color=%232078ac&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+      </div>
+
     </div>
   );
 }
