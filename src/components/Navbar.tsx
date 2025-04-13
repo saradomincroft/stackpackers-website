@@ -95,7 +95,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
     <nav
       className="fixed top-0 left-0 w-full z-50"
       style={{
-        backgroundColor: "rgba(0, 51, 102, 1)",
+        backgroundColor: "#3a4f9e",
         opacity: isVisible ? 0.9 : 0,
         WebkitBackdropFilter: "blur(100px)",
         transition: "opacity 1s ease-in-out 1s",
@@ -123,7 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
         style={{
           transform: menuOpen ? "translateX(0)" : "translateX(100%)",
           zIndex: 50,
-          backgroundColor: "#003366",
+          backgroundColor: "#3a4f9e",
           backdropFilter: "blur(100px)",
         }}
       >
@@ -156,7 +156,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
         /* Mobile Link Styles */
         .active-link-mobile {
           color: #ffea00;
-          background-color: #2a5ba9;
+          background-color: #2a3c6b;
           padding: 6px 0;
         }
 
@@ -167,11 +167,11 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
 
         .link-mobile:hover {
           color: #ffea00;
-          background-color: rgba(42, 91, 169, 0.3);
+          background-color: #2a3c6b;
         }
 
         .active-link-mobile:hover {
-          background-color: #2a5ba9;
+          background-color: #2a3c6b;
         }
 
         button:focus {
