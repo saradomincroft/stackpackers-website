@@ -54,7 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
       <nav
         className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-opacity duration-1000 delay-1000`}
         style={{
-          backgroundColor: "rgba(0, 51, 102, 0.5)",
+          backgroundColor: "rgba(58, 79, 158, 0.5)",
           opacity: isVisible ? 1 : 0,
           WebkitBackdropFilter: "blur(10px)",
         }}

@@ -3,6 +3,7 @@ import React from 'react';
 const Contact = () => {
   return (
     <div id="contact-section" className="py-8 px-4">
+      <h2 className="sr-only">Contact</h2>
       <div className="mx-auto">
         <iframe
           title="Contact Form"
