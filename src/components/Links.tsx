@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "../styles/Links.module.css";
+//todo: fix hover color
 
 const Links = () => {
   const [hasScrolledIn, setHasScrolledIn] = useState(false);

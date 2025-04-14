@@ -123,7 +123,7 @@ const HeroSection = () => {
             <svg
               viewBox="100 30 150 300"
               xmlns="http://www.w3.org/2000/svg"
-              className={`w-18 sm:w-24 md:w-24 lg:w-32 h-auto transition-transform duration-300 ease-in-out hover:scale-110 ${styles.arrowFadeIn} ${styles.arrowGlowAndBurst}`}
+              className={`w-16 sm:w-24 md:w-24 lg:w-32 h-auto transition-transform duration-300 ease-in-out hover:scale-110 ${styles.arrowFadeIn} ${styles.arrowGlowAndBurst}`}
               onClick={handleArrowClick}
               style={{ cursor: "pointer" }}
             >

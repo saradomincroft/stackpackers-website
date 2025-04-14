@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   keywords:
     "bass music, drum and bass, DJ, dnb, electronic music, music production, Ableton Live, DJ mixes, Melbourne DJ, music events, music festivals, music community, music culture, music industry, music promotion, music marketing, music distribution, music licensing, music publishing, music rights management, music royalties, music streaming, music downloads, music sales, music charts, music awards",
   authors: [{ name: "Sara Catalano" }],
+  metadataBase: new URL('https://www.stackpackers.com'),
   openGraph: {
     title: "Stackpackers",
     description:

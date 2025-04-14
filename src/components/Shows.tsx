@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useRef, useState } from "react";
+// todo: fix nav
 
 const shows = [
   {
@@ -48,7 +49,7 @@ export default function Shows() {
     <div
       id="shows-section"
       ref={sectionRef}
-      className="py-4 text-white "
+      className="py-6 text-white "
     >
       <h2 className="sr-only">Shows</h2>
       <div
