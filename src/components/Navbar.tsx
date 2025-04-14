@@ -31,17 +31,19 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
   };
 
   const handleScroll = () => {
+    const offset = 1;
     for (const { id } of sections) {
       const section = document.getElementById(id);
       if (section) {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= navbarHeight && rect.bottom >= window.innerHeight / 2) {
+        if (rect.top <= navbarHeight + offset && rect.bottom >= window.innerHeight / 2) {
           setActiveLink(id);
           break;
         }
       }
     }
   };
+  
 
   useEffect(() => {
     handleScroll();
