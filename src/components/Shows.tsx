@@ -53,7 +53,7 @@ export default function Shows() {
     >
       <h2 className="sr-only">Shows</h2>
       <div
-        className={`grid grid-cols-3 gap-4 py-2 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
+        className={`grid grid-cols-2 md:grid-cols-3 gap-4 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         }`}
         style={{ transitionDelay: inView ? "0.3s" : "0s" }}
