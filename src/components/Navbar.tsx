@@ -43,7 +43,6 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
       }
     }
   };
-  
 
   useEffect(() => {
     handleScroll();
@@ -61,126 +60,124 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
           WebkitBackdropFilter: "blur(10px)",
         }}
       >
-      {/* Desktop nav */}
-      <ul className="hidden md:flex justify-center items-center py-3 space-x-6">
-        {sections.map(({ id, label }) => (
-          <li
-            key={id}
-            className={`font-medium cursor-pointer transition duration-300 text-white ${
-              activeLink === id ? "active-link-desktop" : "link-desktop"
-            }`}
-            onClick={(e) => handleClick(label.toLowerCase(), id, e)}
-          >
-            {label}
-          </li>
-        ))}
-      </ul>
-      <style jsx>{`
-        /* Desktop Link Styles */
-        .active-link-desktop {
-          color: #ffea00;
-        }
-
-        .link-desktop {
-          color: white;
-          transition: background-color 0.3s ease-in-out;
-          font-weight: 500; /* Adjusted font weight for a lighter look */
-        }
-
-        .link-desktop:hover {
-          color: #ffea00;
-          background-color: transparent; /* Removed hover background for desktop */
-        }
-      `}</style>
-    </nav>
-    
-    <nav
-      className="fixed top-0 left-0 w-full z-50"
-      style={{
-        backgroundColor: "#3a4f9e",
-        opacity: isVisible ? 0.9 : 0,
-        WebkitBackdropFilter: "blur(100px)",
-        transition: "opacity 1s ease-in-out 1s",
-      }}
-    >
-      {/* Mobile hamburger */}
-      <div className="md:hidden flex justify-between items-center p-2">
-        <span className="flex-1"></span>
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          className="text-3xl z-[100] md:hidden transition-transform hover:scale-110 text-[#ffea00] cursor-pointer"
-        >
-          {menuOpen ? (
-            <span className="text-2xl font-bold hover:text-[#ffea00] cursor-pointer">✕</span>
-          ) : (
-            "☰"
-          )}
-        </button>
-      </div>
-
-      {/* Slide-in mobile nav */}
-      <div
-        className="md:hidden fixed top-0 right-0 w-full h-full transition-transform duration-500 ease-in-out"
-        style={{
-          transform: menuOpen ? "translateX(0)" : "translateX(100%)",
-          zIndex: 50,
-          backgroundColor: "#3a4f9e",
-          backdropFilter: "blur(100px)",
-        }}
-      >
-        <ul
-          className="flex flex-col items-center space-y-2 p-0"
-          style={{ marginTop: `${navbarHeight - 8}px` }}
-        >
+        {/* Desktop nav */}
+        <ul className="hidden md:flex justify-center items-center py-3 space-x-6">
           {sections.map(({ id, label }) => (
             <li
               key={id}
-              className="w-full m-0"
+              className={`font-medium cursor-pointer transition duration-300 text-white ${
+                activeLink === id ? "active-link-desktop" : "link-desktop"
+              }`}
+              onClick={(e) => handleClick(label.toLowerCase(), id, e)}
             >
-              <a
-                href={`#${id}`}
-                className={`block w-full py-2 text-center text-white font-bold cursor-pointer transition duration-300 ${
-                  activeLink === id
-                    ? "active-link-mobile"
-                    : "link-mobile"
-                }`}
-                onClick={(e) => handleClick(label.toLowerCase(), id, e)}
-              >
-                {label}
-              </a>
+              {label}
             </li>
           ))}
         </ul>
-      </div>
+        <style jsx>{`
+          /* Desktop Link Styles */
+          .active-link-desktop {
+            color: #ffea00;
+          }
 
-      <style jsx>{`
-        /* Mobile Link Styles */
-        .active-link-mobile {
-          color: #ffea00;
-          background-color: #2a3c6b;
-          padding: 6px 0;
-        }
+          .link-desktop {
+            color: white;
+            transition: background-color 0.3s ease-in-out;
+            font-weight: 500; /* Adjusted font weight for a lighter look */
+          }
 
-        .link-mobile {
-          color: white;
-          transition: background-color 0.3s ease-in-out;
-        }
+          .link-desktop:hover {
+            color: #ffea00;
+            background-color: transparent; /* Removed hover background for desktop */
+          }
+        `}</style>
+      </nav>
 
-        .link-mobile:hover {
-          color: #ffea00;
-          background-color: #2a3c6b;
-        }
+      <nav
+        className="fixed top-0 left-0 w-full z-50"
+        style={{
+          backgroundColor: "#3a4f9e",
+          opacity: isVisible ? 1 : 0,
+          transition: "opacity 1s ease-in-out 1s",
+        }}
+      >
+        {/* Mobile hamburger */}
+        <div className="md:hidden flex justify-between items-center p-2">
+          <span className="flex-1"></span>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            className="text-3xl z-[100] md:hidden transition-transform hover:scale-110 text-[#ffea00] cursor-pointer"
+          >
+            {menuOpen ? (
+              <span className="text-2xl font-bold hover:text-[#ffea00] cursor-pointer">✕</span>
+            ) : (
+              "☰"
+            )}
+          </button>
+        </div>
 
-        .active-link-mobile:hover {
-          background-color: #2a3c6b;
-        }
+        {/* Slide-in mobile nav */}
+        <div
+          className="md:hidden fixed top-0 right-0 w-full h-full transition-transform duration-500 ease-in-out"
+          style={{
+            transform: menuOpen ? "translateX(0)" : "translateX(100%)",
+            zIndex: 50,
+            backgroundColor: "rgba(58, 79, 158, 1)",
+          }}
+        >
+          <ul
+            className="flex flex-col items-center space-y-2 p-0"
+            style={{ marginTop: `${navbarHeight - 8}px` }}
+          >
+            {sections.map(({ id, label }) => (
+              <li
+                key={id}
+                className="w-full m-0"
+              >
+                <a
+                  href={`#${id}`}
+                  className={`block w-full py-2 text-center text-white font-bold cursor-pointer transition duration-300 ${
+                    activeLink === id
+                      ? "active-link-mobile"
+                      : "link-mobile"
+                  }`}
+                  onClick={(e) => handleClick(label.toLowerCase(), id, e)}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        button:focus {
-          outline: none;
-        }
-      `}</style>
-    </nav>
+        <style jsx>{`
+          /* Mobile Link Styles */
+          .active-link-mobile {
+            color: #ffea00;
+            background-color: #2a3c6b;
+            padding: 6px 0;
+          }
+
+          .link-mobile {
+            color: white;
+            transition: background-color 0.3s ease-in-out;
+          }
+
+          .link-mobile:hover {
+            color: #ffea00;
+            background-color: #2a3c6b;
+          }
+
+          .active-link-mobile:hover {
+            background-color: #2a3c6b;
+          }
+
+          button:focus {
+            outline: none;
+          }
+        `}</style>
+      </nav>
     </>
   );
 };

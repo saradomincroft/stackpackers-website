@@ -63,10 +63,23 @@ const Info = () => {
           }}
         ></iframe>
       </div>
-       
+
+      {/* PRESS IMAGE */}
+      <div
+        className={`transition-all duration-1000 ease-in-out transform ${
+          inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
+        } w-[80%] aspect-[21/9] mt-6`}
+        style={{ transitionDelay: inView ? "0.4s" : "0s" }}
+      >
+        <img
+          src="/img/profile-banner.jpg"
+          alt="Stackpackers Duo"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       {/* VIDEO */}
-      <div
+      {/* <div
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6`}
@@ -76,7 +89,7 @@ const Info = () => {
           <source src="/img/info-vid.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> */}
 
       {/* BIO TEXT */}
       <div
@@ -109,19 +122,7 @@ const Info = () => {
         </div>
       </div>
 
-      {/* PRESS IMAGE */}
-      <div
-        className={`transition-all duration-1000 ease-in-out transform ${
-          inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-        } w-[80%] aspect-[21/9] mt-6`}
-        style={{ transitionDelay: inView ? "0.8s" : "0s" }}
-      >
-        <img
-          src="/img/profile-banner.jpg"
-          alt="Stackpackers Duo"
-          className="w-full h-full object-cover"
-        />
-      </div>
+     
 
       
       {/* SOUNDCLOUD IFRAME */}
@@ -129,7 +130,7 @@ const Info = () => {
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6`}
-        style={{ transitionDelay: inView ? "1s" : "0s" }}
+        style={{ transitionDelay: inView ? "0.8s" : "0s" }}
       >
         <iframe
           width="100%"
@@ -144,7 +145,7 @@ const Info = () => {
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6`}
-        style={{ transitionDelay: inView ? "1.2s" : "0s" }}
+        style={{ transitionDelay: inView ? "1s" : "0s" }}
       >
         <img
           src="/img/stackpackers-dj-1.jpg"
@@ -158,7 +159,7 @@ const Info = () => {
         className={`transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6`}
-        style={{ transitionDelay: inView ? "1.4s" : "0s" }}
+        style={{ transitionDelay: inView ? "1.2s" : "0s" }}
       >
         <img
           src="/img/stackpackers-dj-2.jpg"
