@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Stackpackers",
+  title: "Stackpackers | Drum and Bass | Melbourne | Australia",
   description:
     "⚡️ A storm in full force, shaking the scene with explosive sets and powerful soundscapes ⛈️",
   keywords:
@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Sara Catalano" }],
   metadataBase: new URL('https://www.stackpackers.com'),
   openGraph: {
-    title: "Stackpackers",
+    title: "Stackpackers | Drum and Bass | Melbourne | Australia",
     description:
       "⚡️ A storm in full force, shaking the scene with explosive sets and powerful soundscapes ⛈️",
     url: "https://stackpackers.com",
-    siteName: "Stackpackers",
+    siteName: "Stackpackers | Drum and Bass | Melbourne | Australia",
     images: [
       {
         url: "/img/og.jpg",

@@ -1,18 +1,32 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useRef, useState } from "react";
-// todo: fix nav
+import DateTime from 'react-datetime';
 
 const shows = [
   {
     title: "A.M.C. & Phantom, Koven, Skantia, Circadian",
     href: "https://moshtix.com.au/v2/event/a-m-c-phantom-koven-skantia-circadian/178936",
     imgSrc: "/img/shows-artwork/amc.jpg",
+    date: "2025-06-08",
+  },
+  {
+    title: "Rum & Bass",
+    href: "https://www.instagram.com/hyperfix.crew/",
+    imgSrc: "/img/shows-artwork/rnb.jpeg",
+    date: "2025-05-29"
+  },
+    {
+    title: "Blackout Frequency Warehouse Rave",
+    href: "https://www.instagram.com/hyperfix.crew/",
+    imgSrc: "/img/shows-artwork/rnb.jpeg",
+    date: "2025-05-29"
   },
   {
     title: "Basstripper",
     href: "https://megatix.com.au/events/basstripper-melbourne",
     imgSrc: "/img/shows-artwork/basstripper.jpg",
+    date: "2025-05-23"
   },
 ];
 

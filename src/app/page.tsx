@@ -75,7 +75,7 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "MusicGroup",
-              "name": "Stackpackers",
+              "name": "Stackpackers | Drum and Bass | Melbourne | Australia",
               "description": "A storm in full force, shaking the scene with explosive sets and powerful soundscapes.",
               "url": "https://stackpackers.com",
               "genre": "Drum and Bass",

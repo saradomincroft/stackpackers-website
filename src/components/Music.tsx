@@ -4,6 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 const artworks = [
   {
+    title: "Dark Side",
+    href: "https://soundcloud.com/stackpackers/dark-side",
+    imgSrc: "/img/music-artwork/darkside.jpg",
+  },
+  {
     title: "Your Outie",
     href: "https://www.youtube.com/watch?v=1oD1SbNvmmI",
     imgSrc: "/img/music-artwork/your-outie.jpg",
