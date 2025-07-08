@@ -97,23 +97,28 @@ const Info = () => {
             the dance floor charged. However, it&apos;s not all thunder and
             lightning, they know exactly when to bring it down with emotional,
             moody liquid, proving they&apos;re as versatile as they are energetic.
+            From bass heavy DnB to soulful liquid, Stackpackers bring the kind of 
+            energy that makes every performance and song unique and every performance a
+            sonic adventure.
             </p>
             <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
-            From bass heavy DnB to soulful liquid, Stackpackers bring the kind of 
-            energy that makes every set and song unique and every performance a new 
-            adventure. Aside from DnB, they explore house, psytrance, dubstep, and UKG, 
-            always adding fresh twists and surprises to their sets. Each performance 
-            is a sonic adventure full of unexpected moments.
+            In the production space, Stackpackers have been gaining traction 
+            with releases like &apos;Run&apos; and &apos;Notorious&apos; going off in the rave. 
+            Their tracks have found a home with those who seek unfiltered chaos, and a fresh take 
+            on the underground sound. 
+            Aside from DnB, they explore house, psytrance, dubstep, 
+            and UKG, 
+            always adding fresh twists and surprises to their sets.
             </p>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed font-thin">
-            In the production space, their tracks have found a home with those
-            who seek unfiltered chaos and a fresh take on the underground sound.
+            As the creators of Nocturne, Stackpackers have crafted a world where high 
+            energy, dark gritty basslines, and moody liquid collide — a space where 
+            rhythm and darkness surge together in perfect harmony. Concepts like 
+            Electropolis embody their unique approach to building immersive experiences, 
+            always pushing the boundaries of sound and atmosphere.
           </p>
         </div>
       </div>
-
-     
-
       
       {/* SOUNDCLOUD IFRAME */}
       <div

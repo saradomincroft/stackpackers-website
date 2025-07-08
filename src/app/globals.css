@@ -4,6 +4,10 @@ html {
   scroll-padding-top: 3rem;
 }
 
+html, body {
+    background-color: var(--stellar-purple)
+}
+
 @font-face {
   font-family: 'Roboto';
   src: url('/fonts/Roboto-Regular.ttf') format('truetype');
@@ -39,6 +43,7 @@ body {
   animation: gradientBackground 5s ease infinite;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  will-change: background-position;
 }
 
 
@@ -105,7 +110,7 @@ body {
 
 /* Optional Firefox support */
 .custom-scrollbar {
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   scrollbar-color: var(--electric-yellow) var(--space-blue);
 }
 
