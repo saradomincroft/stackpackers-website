@@ -93,44 +93,18 @@ const shows = [
 ];
 
 export default function Shows() {
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const upcomingScrollRef = useRef<HTMLDivElement>(null);
+  const pastScrollRef = useRef<HTMLDivElement>(null);
 
-  // NEW refs for each shows grid section
-  const upcomingRef = useRef<HTMLDivElement | null>(null);
-  const pastRef = useRef<HTMLDivElement | null>(null);
-
-  const [inView, setInView] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  const [upcomingPage, setUpcomingPage] = useState(1);
-  const [pastPage, setPastPage] = useState(1);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const handleScroll = () => {
-      if (window.scrollY < 100) setInView(false);
-    };
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [imagesPerView, setImagesPerView] = useState(3);
 
   useEffect(() => {
     const checkScreen = () => {
-      setIsSmallScreen(window.innerWidth < 768);
+      const small = window.innerWidth < 768;
+      setIsSmallScreen(small);
+      setImagesPerView(small ? 2 : 3);
     };
     checkScreen();
     window.addEventListener("resize", checkScreen);
@@ -141,139 +115,102 @@ export default function Shows() {
   const upcoming = shows.filter((s) => dayjs(s.date).isSameOrAfter(today, "day"));
   const past = shows.filter((s) => dayjs(s.date).isBefore(today, "day"));
 
-  const itemsPerPage = isSmallScreen ? 4 : 6;
+  // Scroll handler for arrows
+  function scrollByAmount(scrollContainer: HTMLDivElement | null, direction: "left" | "right") {
+    if (!scrollContainer) return;
+    const scrollAmount = scrollContainer.clientWidth; // scroll by one full view
+    const newScrollPos =
+      direction === "left"
+        ? scrollContainer.scrollLeft - scrollAmount
+        : scrollContainer.scrollLeft + scrollAmount;
+    scrollContainer.scrollTo({
+      left: newScrollPos,
+      behavior: "smooth",
+    });
+  }
 
-  // Pagination calculation
-  const upcomingTotalPages = Math.ceil(upcoming.length / itemsPerPage);
-  const pastTotalPages = Math.ceil(past.length / itemsPerPage);
-
-  // Paginate upcoming shows
-  const paginatedUpcoming = upcoming.slice(
-    (upcomingPage - 1) * itemsPerPage,
-    upcomingPage * itemsPerPage
-  );
-
-  // Sort & paginate past shows
-  const paginatedPast = past
-    .sort((a, b) => dayjs(b.date).valueOf() - dayjs(a.date).valueOf())
-    .slice((pastPage - 1) * itemsPerPage, pastPage * itemsPerPage);
-
-  // Scroll to top of upcoming grid when upcomingPage changes
-  useEffect(() => {
-    if (upcomingRef.current) {
-      upcomingRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [upcomingPage]);
-
-  // Scroll to top of past grid when pastPage changes
-  useEffect(() => {
-    if (pastRef.current) {
-      pastRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }, [pastPage]);
+  const imageFlexBasisPercent = 100 / imagesPerView;
 
   return (
-    <div id="shows-section" ref={sectionRef} className="py-6 text-white">
+    <div
+      id="shows-section"
+      className="py-6 text-white mx-auto"
+      style={{ minWidth: "320px" }}
+      ref={containerRef}
+    >
       <h2 className="sr-only">Shows</h2>
 
       {/* UPCOMING SHOWS */}
       {upcoming.length > 0 && (
         <>
-          <h3 className="text-2xl font-semibold mb-4 text-center">Upcoming Shows</h3>
-          <div
-            ref={upcomingRef}
-            className={`grid grid-cols-2 md:grid-cols-3 gap-4 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
-              inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-            }`}
-            style={{ transitionDelay: inView ? "0.3s" : "0s" }}
-          >
-            {paginatedUpcoming.map((show, idx) => (
-              <a
-                key={idx}
-                href={show.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center transition duration-300"
-              >
-                <div className="aspect-[4/5] overflow-hidden shadow-lg">
-                  <img
+          <h3 className="text-2xl font-semibold mb-4 text-center">Upcoming</h3>
+          <div className="relative flex items-center justify-center gap-2 w-full">
+            {/* Scroll container */}
+            <div
+                ref={upcomingScrollRef}
+                className="flex overflow-x-auto scroll-smooth touch-auto gap-4 w-[80%] custom-scrollbar"
+                style={{ scrollSnapType: "x mandatory" }}
+                    >
+                {upcoming.map((show, idx) => (
+                <a 
+                    key={idx}
+                    href={show.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 rounded shadow-lg overflow-hidden cursor-pointer"
+                    style={{
+                    flex: `0 0 ${imageFlexBasisPercent}%`,
+                    scrollSnapAlign: "start",
+                    aspectRatio: "4 / 5",
+                    }}
+                    tabIndex={0}
+                    aria-label={`Upcoming show: ${show.title}`}
+                >
+                    <img
                     src={show.imgSrc}
                     alt={show.title}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <p className="mt-2 text-sm">{show.title}</p>
-              </a>
-            ))}
-          </div>
-
-          {/* UPCOMING PAGINATION */}
-          {upcomingTotalPages > 1 && (
-            <div className="flex justify-center mt-6 space-x-2">
-              {Array.from({ length: upcomingTotalPages }, (_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setUpcomingPage(i + 1)}
-                  className={`px-3 py-1 rounded ${
-                    upcomingPage === i + 1
-                      ? "bg-white text-black"
-                      : "bg-gray-700 hover:bg-gray-600"
-                  }`}
-                >
-                  {i + 1}
-                </button>
-              ))}
+                    className="w-full h-full object-cover"
+                    draggable={false}
+                    />
+                </a>
+                ))}
             </div>
-          )}
+          </div>
         </>
       )}
 
       {/* PAST SHOWS */}
       {past.length > 0 && (
         <>
-          <h3 className="text-2xl font-semibold mt-12 mb-4 text-center">Past Shows</h3>
-          <div
-            ref={pastRef}
-            className={`grid grid-cols-2 md:grid-cols-3 gap-4 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
-              inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-            }`}
-            style={{ transitionDelay: inView ? "0.3s" : "0s" }}
-          >
-            {paginatedPast.map((show, idx) => (
-              <div
-                key={idx}
-                className="block text-center transition duration-300 cursor-default"
-              >
-                <div className="aspect-[4/5] overflow-hidden shadow-lg">
+          <h3 className="text-2xl font-semibold mb-4 mt-8 text-center">Past</h3>
+          <div className="relative flex items-center justify-center gap-2 w-full">
+            {/* Scroll container */}
+            <div
+              ref={pastScrollRef}
+              className="flex overflow-x-auto scroll-smooth touch-auto gap-4 w-[80%] custom-scrollbar"
+              style={{ scrollSnapType: "x mandatory", gap: "1rem", margin: "0 0.5rem" }}
+            >
+              {past.map((show, idx) => (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 rounded shadow-lg overflow-hidden cursor-default"
+                  style={{
+                    flex: `0 0 ${imageFlexBasisPercent}%`,
+                    scrollSnapAlign: "start",
+                    aspectRatio: "4 / 5",
+                  }}
+                  tabIndex={-1}
+                >
                   <img
                     src={show.imgSrc}
                     alt={show.title}
-                    className="object-cover w-full h-full"
+                    className="w-full h-full object-cover"
+                    draggable={false}
                   />
                 </div>
-                <p className="mt-2 text-sm">{show.title}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* PAST PAGINATION */}
-          {pastTotalPages > 1 && (
-            <div className="flex justify-center mt-6 space-x-2">
-              {Array.from({ length: pastTotalPages }, (_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setPastPage(i + 1)}
-                  className={`px-3 py-1 rounded ${
-                    pastPage === i + 1
-                      ? "bg-white text-black"
-                      : "bg-gray-700 hover:bg-gray-600"
-                  }`}
-                >
-                  {i + 1}
-                </button>
               ))}
             </div>
-          )}
+          </div>
         </>
       )}
     </div>

@@ -17,7 +17,8 @@
     "react": "^19.1.0",
     "react-datetime": "^3.3.1",
     "react-dom": "^19.1.0",
-    "swiper": "^11.2.6"
+    "swiper": "^11.2.6",
+    "tailwind-scrollbar": "^4.0.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
