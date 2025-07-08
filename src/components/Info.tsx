@@ -86,26 +86,26 @@ const Info = () => {
         style={{ transitionDelay: inView ? "0.6s" : "0s" }}
       >
         <div className="p-6" style={{ backgroundColor: "rgba(0, 31, 61, 0.8)" }}>
-            <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
             Stackpackers are a storm in full force, sharing a
             chemistry that&apos;s electric, unpredictable, and experimental. 
             Blending old and new, their sets are an ever-changing journey.
             </p>
-            <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
             With drum & bass at the heart of their sound, Stackpackers
             have made their mark with amped-up, power-packed DnB sets that keep
             the dance floor charged. However, it&apos;s not all thunder and
             lightning, they know exactly when to bring it down with emotional,
             moody liquid, proving they&apos;re as versatile as they are energetic.
             </p>
-            <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
             From bass heavy DnB to soulful liquid, Stackpackers bring the kind of 
             energy that makes every set and song unique and every performance a new 
             adventure. Aside from DnB, they explore house, psytrance, dubstep, and UKG, 
             always adding fresh twists and surprises to their sets. Each performance 
             is a sonic adventure full of unexpected moments.
             </p>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed font-thin">
             In the production space, their tracks have found a home with those
             who seek unfiltered chaos and a fresh take on the underground sound.
           </p>

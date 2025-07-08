@@ -4,11 +4,25 @@ html {
   scroll-padding-top: 3rem;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: thin;
+}
+
 :root {
-  --space-blue: #001f3d; 
-  --cosmic-blue: #143b85;
+  --space-blue: #0d0d66	; 
+  --cosmic-blue: #14148a;
   --neon-blue: #0070f3;
-  --stellar-purple: #2f2fff;
+  --stellar-purple: #1f1fcc;
   --dark-space: #010101;
   --white: #F1F1F1;
   --light-steel: #B0BEC5;  
@@ -16,13 +30,17 @@ html {
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--white);
   overflow-x: hidden;
-  background: linear-gradient(45deg, var(--space-blue), var(--cosmic-blue),  var(--stellar-purple));
+  background: linear-gradient(45deg, var(--space-blue), var(--cosmic-blue));
   background-size: 150% 150%;
   animation: gradientBackground 5s ease infinite;
-  color: var(--white);
-  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 
 @keyframes gradientBackground {
   0% {

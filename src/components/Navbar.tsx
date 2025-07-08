@@ -55,13 +55,13 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
       <nav
         className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-opacity duration-1000 delay-1000`}
         style={{
-          backgroundColor: "rgba(58, 79, 158, 0.5)",
+          backgroundColor: "rgba(17,18,130,255)",
           opacity: isVisible ? 1 : 0,
           WebkitBackdropFilter: "blur(10px)",
         }}
       >
         {/* Desktop nav */}
-        <ul className="hidden md:flex justify-center items-center py-3 space-x-6">
+        <ul className="hidden md:flex justify-center items-center py-3 space-x-6 font-medium">
           {sections.map(({ id, label }) => (
             <li
               key={id}
@@ -83,12 +83,12 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
           .link-desktop {
             color: white;
             transition: background-color 0.3s ease-in-out;
-            font-weight: 500; /* Adjusted font weight for a lighter look */
+            font-weight: 500;
           }
 
           .link-desktop:hover {
             color: #ffea00;
-            background-color: transparent; /* Removed hover background for desktop */
+            background-color: transparent;
           }
         `}</style>
       </nav>
@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
       <nav
         className="fixed top-0 left-0 w-full z-50"
         style={{
-          backgroundColor: "#3a4f9e",
+          backgroundColor: "#111282",
           opacity: isVisible ? 1 : 0,
           transition: "opacity 1s ease-in-out 1s",
         }}
@@ -110,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
             className="text-3xl z-[100] md:hidden transition-transform hover:scale-110 text-[#ffea00] cursor-pointer"
           >
             {menuOpen ? (
-              <span className="text-2xl font-bold hover:text-[#ffea00] cursor-pointer">✕</span>
+              <span className="text-2xl hover:text-[#ffea00] cursor-pointer">✕</span>
             ) : (
               "☰"
             )}
@@ -123,7 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
           style={{
             transform: menuOpen ? "translateX(0)" : "translateX(100%)",
             zIndex: 50,
-            backgroundColor: "rgba(58, 79, 158, 1)",
+            backgroundColor: "rgba(17,18,130,255)",
           }}
         >
           <ul
@@ -137,7 +137,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
               >
                 <a
                   href={`#${id}`}
-                  className={`block w-full py-2 text-center text-white font-bold cursor-pointer transition duration-300 ${
+                  className={`block w-full py-2 text-center text-white cursor-pointer transition duration-300 ${
                     activeLink === id
                       ? "active-link-mobile"
                       : "link-mobile"
@@ -155,7 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
           /* Mobile Link Styles */
           .active-link-mobile {
             color: #ffea00;
-            background-color: #2a3c6b;
+            background-color: #1f1fcc;
             padding: 6px 0;
           }
 
@@ -166,11 +166,11 @@ const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
 
           .link-mobile:hover {
             color: #ffea00;
-            background-color: #2a3c6b;
+            background-color: #1f1fcc;
           }
 
           .active-link-mobile:hover {
-            background-color: #2a3c6b;
+            background-color: #1f1fcc;
           }
 
           button:focus {

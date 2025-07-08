@@ -75,7 +75,8 @@ export default function Music() {
       ref={sectionRef}
       className="py-4 text-white "
     >
-      <h2 className="sr-only">Music</h2>
+        <h2 className="sr-only">Music</h2>
+        <h3 className="text-2xl font-medium mt-8 text-center text-[#ffea00]">MUSIC</h3>
       <div
         className={`grid grid-cols-3 gap-4 py-4 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
