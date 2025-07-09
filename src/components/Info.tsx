@@ -145,33 +145,49 @@ const Info = () => {
         ></iframe>
       </div>
 
-      {/* 6. DJ IMAGE 1 */}
-      <div
-        className={`transition-all duration-1000 ease-in-out transform ${
-          inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
+        {/* 6. DJ IMAGE 1 */}
+        <div
+        className={`relative transition-all duration-1000 ease-in-out transform ${
+            inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6`}
         style={{ transitionDelay: inView ? "1s" : "0s" }}
-      >
+        >
         <img
-          src="/img/stackpackers-dj-1.jpg"
-          alt="Stackpackers DJ Photo - Taken by Larkz"
-          className="w-full h-full object-cover"
+            src="/img/stackpackers-dj-1.jpg"
+            alt="Stackpackers DJ Photo - Taken by Nicholas Bexter Photography"
+            className="w-full h-full object-cover"
         />
-      </div>
+        <a
+            href="https://www.instagram.com/nicholasbexter_photography"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-2 right-2 text-white text-xs bg-black bg-opacity-50 px-2 py-1 rounded"
+        >
+            Photo Credits: @nicholasbexter_photography
+        </a>
+        </div>
 
-      {/* 7. DJ IMAGE 2 */}
-      <div
-        className={`transition-all duration-1000 ease-in-out transform ${
-          inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
+        {/* 7. DJ IMAGE 2 */}
+        <div
+        className={`relative transition-all duration-1000 ease-in-out transform ${
+            inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6`}
         style={{ transitionDelay: inView ? "1.2s" : "0s" }}
-      >
+        >
         <img
-          src="/img/stackpackers-dj-2.jpg"
-          alt="Stackpackers DJ Photo - Taken by Larkz"
-          className="w-full h-full object-cover"
+            src="/img/stackpackers-dj-2.jpg"
+            alt="Stackpackers DJ Photo - Taken by Larkz"
+            className="w-full h-full object-cover"
         />
-      </div>
+        <a
+            href="https://www.instagram.com/larkz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-2 right-2 text-white text-xs bg-black bg-opacity-50 px-2 py-1 rounded"
+        >
+            Photo Credits: @larkz
+        </a>
+        </div>
     </section>
   );
 };
