@@ -78,7 +78,6 @@ export default function Shows() {
   useEffect(() => {
     const checkScreen = () => {
       const small = window.innerWidth < 768;
-    //   setIsSmallScreen(small);
       setImagesPerView(small ? 2 : 3);
     };
     checkScreen();
@@ -116,7 +115,7 @@ export default function Shows() {
                 style={{ scrollSnapType: "x mandatory" }}
                     >
                 {upcoming.map((show, idx) => (
-                <a 
+                <a
                     key={idx}
                     href={show.href}
                     target="_blank"
@@ -125,19 +124,34 @@ export default function Shows() {
                     style={{
                     flex: `0 0 ${imageFlexBasisPercent}%`,
                     scrollSnapAlign: "start",
-                    aspectRatio: "4 / 5",
                     }}
                     tabIndex={0}
                     aria-label={`Upcoming show: ${show.title}`}
                 >
+                    <div
+                    style={{
+                        position: "relative",
+                        width: "100%",
+                        paddingTop: `${(5 / 4) * 100}%`, // 4:5 aspect ratio → height = 125% width
+                    }}
+                    >
                     <img
-                    src={show.imgSrc}
-                    alt={show.title}
-                    className="w-full h-full object-cover"
-                    draggable={false}
+                        src={show.imgSrc}
+                        alt={show.title}
+                        draggable={false}
+                        style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        }}
                     />
+                    </div>
                 </a>
                 ))}
+
             </div>
           </div>
         </>
@@ -156,22 +170,37 @@ export default function Shows() {
             >
               {past.map((show, idx) => (
                 <div
-                  key={idx}
-                  className="flex-shrink-0 rounded shadow-lg overflow-hidden cursor-default"
-                  style={{
-                    flex: `0 0 ${imageFlexBasisPercent}%`,
-                    scrollSnapAlign: "start",
-                    aspectRatio: "4 / 5",
-                  }}
-                  tabIndex={-1}
-                >
-                  <img
-                    src={show.imgSrc}
-                    alt={show.title}
-                    className="w-full h-full object-cover"
-                    draggable={false}
-                  />
-                </div>
+                    key={idx}
+                    className="flex-shrink-0 rounded shadow-lg overflow-hidden cursor-default"
+                    style={{
+                        flex: `0 0 ${imageFlexBasisPercent}%`,
+                        scrollSnapAlign: "start",
+                    }}
+                    tabIndex={-1}
+                    >
+                    <div
+                        style={{
+                        position: "relative",
+                        width: "100%",
+                        paddingTop: `${(5 / 4) * 100}%`, // 125%
+                        }}
+                    >
+                        <img
+                        src={show.imgSrc}
+                        alt={show.title}
+                        draggable={false}
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                        }}
+                        />
+                    </div>
+                    </div>
+
               ))}
             </div>
           </div>
