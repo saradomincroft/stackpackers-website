@@ -73,13 +73,12 @@ export default function Shows() {
   const upcomingScrollRef = useRef<HTMLDivElement>(null);
   const pastScrollRef = useRef<HTMLDivElement>(null);
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [imagesPerView, setImagesPerView] = useState(3);
 
   useEffect(() => {
     const checkScreen = () => {
       const small = window.innerWidth < 768;
-      setIsSmallScreen(small);
+    //   setIsSmallScreen(small);
       setImagesPerView(small ? 2 : 3);
     };
     checkScreen();
@@ -93,20 +92,6 @@ export default function Shows() {
   .sort((a, b) => dayjs(a.date).diff(dayjs(b.date)));
 
   const past = shows.filter((s) => dayjs(s.date).isBefore(today, "day"));
-
-  // Scroll handler for arrows
-  function scrollByAmount(scrollContainer: HTMLDivElement | null, direction: "left" | "right") {
-    if (!scrollContainer) return;
-    const scrollAmount = scrollContainer.clientWidth; // scroll by one full view
-    const newScrollPos =
-      direction === "left"
-        ? scrollContainer.scrollLeft - scrollAmount
-        : scrollContainer.scrollLeft + scrollAmount;
-    scrollContainer.scrollTo({
-      left: newScrollPos,
-      behavior: "smooth",
-    });
-  }
 
   const imageFlexBasisPercent = 100 / imagesPerView;
 
