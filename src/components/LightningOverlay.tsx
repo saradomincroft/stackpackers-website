@@ -23,7 +23,7 @@ const LightningOverlay = () => {
       this.color = Math.random() > 0.5 ? "#00faff" : "#fff800";
       this.generatePoints();
 
-      if (forkLevel < 2) {
+      if (forkLevel === 0 && Math.random() < 0.3) {
         const numForks = Math.floor(Math.random() * 2);
         for (let i = 0; i < numForks; i++) {
           const forkIndex = Math.floor(Math.random() * this.points.length);
@@ -38,7 +38,7 @@ const LightningOverlay = () => {
     }
 
     generatePoints() {
-      const steps = 20;
+      const steps = 16;
       const dx = (this.endX - this.startX) / steps;
       const dy = (this.endY - this.startY) / steps;
       let x = this.startX;
@@ -68,9 +68,9 @@ const LightningOverlay = () => {
         ctx.lineTo(p.x, p.y);
       }
       ctx.strokeStyle = this.color;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 1;
       ctx.shadowColor = this.color;
-      ctx.shadowBlur = 10;
+      ctx.shadowBlur = 6;
       ctx.globalAlpha = 1 - this.life / this.maxLife;
       ctx.stroke();
       ctx.restore();
@@ -106,8 +106,8 @@ const LightningOverlay = () => {
       bolts.push(new Lightning(startX, startY, endX, endY));
 
       // Cap to 100 bolts
-      if (bolts.length > 50) {
-        bolts.splice(0, bolts.length - 100);
+      if (bolts.length > 30) {
+        bolts.splice(0, bolts.length - 30);
       }
     };
 

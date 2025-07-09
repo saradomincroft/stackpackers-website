@@ -63,20 +63,30 @@ const Info = () => {
           }}
         ></iframe>
       </div>
-
-      {/* PRESS IMAGE */}
-      <div
-        className={`transition-all duration-1000 ease-in-out transform ${
-          inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
+        {/* PRESS IMAGE */}
+        <div
+        className={`relative transition-all duration-1000 ease-in-out transform ${
+            inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] aspect-[21/9] mt-6`}
         style={{ transitionDelay: inView ? "0.4s" : "0s" }}
-      >
+        >
         <img
-          src="/img/profile-banner.jpg"
-          alt="Stackpackers Duo"
-          className="w-full h-full object-cover"
+            src="/img/profile-banner.jpg"
+            alt="Stackpackers Duo"
+            className="w-full h-full object-cover"
         />
-      </div>
+        
+        {/* Credit Text Overlay */}
+        <a
+            href="https://www.instagram.com/rexthebard/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-2 right-2 text-white text-xs bg-black bg-opacity-50 px-2 py-1 rounded"
+        >
+            Photo Credits: @rexthebard
+        </a>
+        </div>
+
 
       {/* BIO TEXT */}
       <div
