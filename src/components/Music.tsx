@@ -3,41 +3,51 @@
 import { useEffect, useRef, useState } from "react";
 
 const artworks = [
-  {
-    title: "Dark Side",
-    href: "https://soundcloud.com/stackpackers/dark-side",
-    imgSrc: "/img/music-artwork/darkside.jpg",
-  },
-  {
-    title: "Your Outie",
-    href: "https://www.youtube.com/watch?v=1oD1SbNvmmI",
-    imgSrc: "/img/music-artwork/your-outie.jpg",
-  },
-  {
-    title: "Notorious",
-    href: "https://open.spotify.com/track/0snGpj75e0p0vw2XS9J05z?si=62e17e124d894703",
-    imgSrc: "/img/music-artwork/notorious.jpg",
-  },
-  {
-    title: "Think Too Much",
-    href: "https://open.spotify.com/track/2xbupDenR62ke7tB3CF8V4?si=258c7182a4134cc2",
-    imgSrc: "/img/music-artwork/think-too-much.jpg",
-  },
-  {
-    title: "Bonkers",
-    href: "https://open.spotify.com/track/6ErBYAuXlET8rWFjjiL7C6?si=a2c0c181c5e04080",
-    imgSrc: "/img/music-artwork/bonkers.jpg",
-  },
-  {
-    title: "Nonstop",
-    href: "https://open.spotify.com/track/0NiCVFiMtjK9xQxFxUk0XQ?si=46892a136ad34708",
-    imgSrc: "/img/music-artwork/nonstop.jpg",
-  },
-  {
-    title: "Run",
-    href: "https://open.spotify.com/track/3ue48E1t2MW2EB6APBPBk5?si=d8c919cc1ed84191",
-    imgSrc: "/img/music-artwork/run.jpg",
-  },
+    {
+        title: "Woo Bass",
+        href: "https://soundcloud.com/stackpackers/woo-bass",
+        imgSrc: "/img/music-artwork/woobass.jpg",
+    },
+    {
+        title: "How It's Done",
+        href: "https://soundcloud.com/stackpackers/huntrix-how-its-done",
+        imgSrc: "/img/music-artwork/howitsdone.jpg",
+    },
+    {
+        title: "Dark Side",
+        href: "https://soundcloud.com/stackpackers/dark-side",
+        imgSrc: "/img/music-artwork/darkside.jpg",
+    },
+    {
+        title: "Your Outie",
+        href: "https://www.youtube.com/watch?v=1oD1SbNvmmI",
+        imgSrc: "/img/music-artwork/your-outie.jpg",
+    },
+    {
+        title: "Notorious",
+        href: "https://open.spotify.com/track/0snGpj75e0p0vw2XS9J05z?si=62e17e124d894703",
+        imgSrc: "/img/music-artwork/notorious.jpg",
+    },
+    {
+        title: "Think Too Much",
+        href: "https://open.spotify.com/track/2xbupDenR62ke7tB3CF8V4?si=258c7182a4134cc2",
+        imgSrc: "/img/music-artwork/think-too-much.jpg",
+    },
+    {
+        title: "Bonkers",
+        href: "https://open.spotify.com/track/6ErBYAuXlET8rWFjjiL7C6?si=a2c0c181c5e04080",
+        imgSrc: "/img/music-artwork/bonkers.jpg",
+    },
+    {
+        title: "Nonstop",
+        href: "https://open.spotify.com/track/0NiCVFiMtjK9xQxFxUk0XQ?si=46892a136ad34708",
+        imgSrc: "/img/music-artwork/nonstop.jpg",
+    },
+    {
+        title: "Run",
+        href: "https://open.spotify.com/track/3ue48E1t2MW2EB6APBPBk5?si=d8c919cc1ed84191",
+        imgSrc: "/img/music-artwork/run.jpg",
+    },
 ];
 
 export default function Music() {
@@ -76,7 +86,7 @@ export default function Music() {
       className="py-4 text-white "
     >
         <h2 className="sr-only">Music</h2>
-        <h3 className="text-2xl font-medium mt-8 text-center text-[#ffea00]">MUSIC</h3>
+        <h3 className="text-2xl font-medium mt-8 text-center text-[#ffea00]">RELEASES</h3>
       <div
         className={`grid grid-cols-3 gap-4 py-4 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
@@ -100,18 +110,6 @@ export default function Music() {
             </div>
           </a>
         ))}
-      </div>
-      <div
-        className={`transition-all duration-1000 ease-in-out transform ${
-          inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
-        } w-[80%] mx-auto mt-4`}
-        style={{ transitionDelay: inView ? "0.6s" : "0s" }}
-      >
-      <iframe
-        width="100%"
-        height="120"
-        allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1938127935&color=%232078ac&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
       </div>
 
     </div>

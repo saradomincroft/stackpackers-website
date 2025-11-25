@@ -5,63 +5,118 @@ import dayjs from "dayjs";
 import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
 dayjs.extend(isSameOrAfter);
 
+
 const shows = [
     {
-        title: "Slack Soundsystem",
+        title: "Abyssal Presents Soulful Sessions at Nevermind Bar, Melbourne Australia",
+        href: "https://www.facebook.com/events/2081448785928836",
+        imgSrc: "/img/shows-artwork/soulfulsessions_december_2025.jpg",
+        date: "2025-12-12",
+    },
+    {
+        title: "Pitch Control Presents Wilkinson, Rova, and Sammythesinner at 170 Russell, Melbourne Australia",
+        href: "https://moshtix.com.au/v2/event/wilkinson/184336",
+        imgSrc: "/img/shows-artwork/wilkinson_november_2025.jpg",
+        date: "2025-11-21",
+    },
+    {
+        title: "Nocturne Presents Electropolis: Halloween Edition at QQQ, Melbourne Australia",
+        href: "https://ra.co/events/2243135",
+        imgSrc: "/img/shows-artwork/electropolis_halloween_edition_october_2025.jpg",
+        date: "2025-10-31",
+    },
+    {
+        title: "Like It Love It Events Presents: DnB Boat Party, Melbourne Australia",
+        href: "https://fixr.co/event/drum-and-bass-boat-party-melbourne-tickets-374049284",
+        imgSrc: "/img/shows-artwork/dnboatparty_october_2025.jpg",
+        date: "2025-10-25",
+    },
+    {
+        title: "House of Sin at Top Yard Rooftop, Melbourne Australia",
+        href: "https://megatix.com.au/events/house-of-sin-melbourne",
+        imgSrc: "/img/shows-artwork/house_of_sin_october_2025.jpg",
+        date: "2025-10-11",
+    },
+        {
+        title: "Plasma Lab Presents SWRVE featuring EN:VY, Melbourne Australia",
+        href: "https://ra.co/events/2245209",
+        imgSrc: "/img/shows-artwork/plasmalab-envy.jpg",
+        date: "2025-09-25",
+    },
+    {
+        title: "Delight Liquid Edition at Section 8, Melbourne Australia",
+        href: "https://www.facebook.com/events/627721530371012",
+        imgSrc: "/img/shows-artwork/delight_liquid_edition_september_2025.jpg",
+        date: "2025-09-07",
+    },
+    {
+        title: "Blackout Frequency Present Whiteout Frequency at The General Mt Hotham, Hotham Australia",
+        href: "https://events.humanitix.com/whiteout-frequency",
+        imgSrc: "/img/shows-artwork/whiteout_frequency_august_2025.jpg",
+        date: "2025-08-30",
+    },
+    {
+        title: "Slack Soundsystem at Second Story Studios, Melbourne Australia",
         href: "https://www.eventbrite.com.au/e/slack-sound-system-warehouse-party-tickets-1459809853569",
         imgSrc: "/img/shows-artwork/slacksoundsystem.jpg",
         date: "2025-08-02",
     },
     {
-        title: "Blackout Frequency Warehouse Rave Volume 2",
+        title: "Blackout Frequency Warehouse Rave Volume 2, Melbourne Australia",
         href: "https://events.humanitix.com/blackout-frequency-v2",
         imgSrc: "/img/shows-artwork/blackoutfrequencyvol2.jpg",
         date: "2025-07-26",
     },
     {
-        title: "Nocturne Electropolis - Liquid and Dark Drum and Bass Edition",
+        title: "Nocturne Presents Electropolis: Liquid and Dark Drum and Bass Edition at QQQ, Melbourne Australia",
         href: "https://ra.co/events/2190164",
         imgSrc: "/img/shows-artwork/nocturneelectropolis.jpg",
         date: "2025-07-18",
     },
     {
-        title: "SUB-MERGED",
+        title: "SUB-MERGED at Laundry, Melbourne Australia",
         href: "https://m.moshtix.com.au/v2/event/sub-merged-laundry/181747",
         imgSrc: "/img/shows-artwork/submerged.jpg",
         date: "2025-07-12",
     },
     {
-        title: "A.M.C. & Phantom, Koven, Skantia, Circadian",
+        title: "Twisted Audio and Inhibit Present A.M.C. & Phantom, Koven, Skantia, Circadian at 170 Russell, Melbourne Australia",
         href: "https://moshtix.com.au/v2/event/a-m-c-phantom-koven-skantia-circadian/178936",
         imgSrc: "/img/shows-artwork/amc.jpg",
         date: "2025-06-08",
     },
     {
-        title: "Rum & Bass",
+        title: "Hyperfix Crew Presents Rum & Bass at Section 8, Melbourne Australia",
         href: "https://www.instagram.com/hyperfix.crew/",
         imgSrc: "/img/shows-artwork/rnb.jpeg",
         date: "2025-05-29",
     },
     {
-        title: "Blackout Frequency Warehouse Rave Volume 1",
+        title: "Blackout Frequency Warehouse Rave Volume 1, Melbourne Australia",
         href: "https://www.instagram.com/blackoutfrequency/",
         imgSrc: "/img/shows-artwork/blackoutwarehouse.jpeg",
         date: "2025-05-24",
     },
     {
-        title: "Basstripper",
+        title: "Inhibit and Nocturne Present Basstripper at Sub Club, Melbourne Australia",
         href: "https://megatix.com.au/events/basstripper-melbourne",
         imgSrc: "/img/shows-artwork/basstripper.jpg",
         date: "2025-05-23",
     },
+    {
+        title: "Pitch Control and Twisted Audio Present SOTA and Crossy at Max Watts, Melbourne Australia",
+        href: "",
+        imgSrc: "/img/shows-artwork/sota_november_2024.jpg",
+        date: "2024-11-09",
+    },
         {
-        title: "Touch Bass 2024",
+        title: "Pitch Control and Twisted Audio Present Touch Bass 2024 at Melbourne Pavillion, Melbourne Australia",
         href: "",
         imgSrc: "/img/shows-artwork/touchbass.jpg",
         date: "2024-03-29",
     },
         {
-        title: "Bou and Basstripper",
+        title: "Twisted Audio and Higher Ground present Bou and Basstripper at Max Watts, Melbourne Australia",
         href: "",
         imgSrc: "/img/shows-artwork/boubasstripper.jpg",
         date: "2023-11-06",
