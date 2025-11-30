@@ -44,7 +44,7 @@ const Info = () => {
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6 overflow-hidden`}
         style={{
-          backgroundColor: "#202020",
+          backgroundColor: "#005A74",
           transitionDelay: inView ? "0.2s" : "0s",
           borderRadius: "0px",
         }}
@@ -101,7 +101,8 @@ const Info = () => {
         <div className="p-6" style={{ backgroundColor: "rgba(0, 31, 61, 0.8)" }}>
             <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
             Stackpackers are a storm in full force, sharing a
-            chemistry that&apos;s electric, unpredictable, and experimental. 
+            chemistry that&apos;s electric, unpredictable, and experimental. The duo originated 
+            in the UK and are currently based in Melbourne.
             </p>
             <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
             With drum & bass at the heart of their sound, Stackpackers
