@@ -6,9 +6,9 @@ const Links = () => {
   const [hasScrolledIn, setHasScrolledIn] = useState(false);
 
   const links = [
-    { href: "https://www.tiktok.com/@stackpackers", label: "TikTok" },
     { href: "https://instagram.com/stackpackers", label: "Instagram" },
     { href: "https://facebook.com/stackpackers", label: "Facebook" },
+    { href: "https://www.tiktok.com/@stackpackers", label: "TikTok" },
     { href: "https://open.spotify.com/artist/6oPMjcVt82VYpcntvL2JqZ?si=UjX0Yg0hQ96CzT9vUlkBuw", label: "Spotify" },
     { href: "https://www.youtube.com/channel/UCDLU5AEO7qqnQXJPHlA9sPQ", label: "YouTube" },
     { href: "https://www.soundcloud.com/stackpackers", label: "Soundcloud" },

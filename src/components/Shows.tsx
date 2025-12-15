@@ -9,21 +9,27 @@ dayjs.extend(isSameOrAfter);
 const shows = [
     {
         title: "Like It Love It Events Presents: DnB Boat Party, Melbourne Australia",
-        href: "https://www.facebook.com/events/2081448785928836",
+        href: "https://fixr.co/event/dnb-boat-party-melbourne-tickets-872451512",
         imgSrc: "/img/shows-artwork/boatparty_march_2026.jpg",
         date: "2026-03-21",
+    },
+    {
+        title: "Blackout Frequency Presents: Dead Serpent - Boxing Day Warehouse Rave (Secret location announced on the night), Melbourne Australia",
+        href: "https://events.humanitix.com/dead-serpent",
+        imgSrc: "/img/shows-artwork/deadserpent_december_2025.jpg",
+        date: "2025-12-26",
+    },
+    {
+        title: "Pulse Audio & SUB:SOLAR Present: Xmas Eve in the Park, Melbourne Australia",
+        href: "https://www.instagram.com/pulse_audio_",
+        imgSrc: "/img/shows-artwork/xmaseveinthepark_december_2025.jpg",
+        date: "2025-12-24",
     },
     {
         title: "Abyssal Presents Soulful Sessions at Nevermind Bar, Melbourne Australia",
         href: "https://www.facebook.com/events/2081448785928836",
         imgSrc: "/img/shows-artwork/soulfulsessions_december_2025.jpg",
         date: "2025-12-13",
-    },
-    {
-        title: "Camp Aldente Thursday Special at Bad Decisions, Melbourne Australia",
-        href: "https://www.instagram.com/campaldente",
-        imgSrc: "/img/shows-artwork/campaldente_december_2025.jpg",
-        date: "2025-12-11",
     },
     {
         title: "Pitch Control Presents Wilkinson, Rova, and Sammythesinner at 170 Russell, Melbourne Australia",
