@@ -4,6 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 const artworks = [
     {
+        title: "Ian Asher and Olly Alexander - Desire (Stackpackers Bootleg)",
+        href: "https://soundcloud.com/stackpackers/desire-stackpackers-flip-free-download",
+        imgSrc: "/img/music-artwork/desire-ian-asher-olly-alexander-stackpackers-bootleg.jpg"
+    },
+    {
         title: "Woo Bass",
         href: "https://soundcloud.com/stackpackers/woo-bass",
         imgSrc: "/img/music-artwork/woobass.jpg",

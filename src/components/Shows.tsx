@@ -14,6 +14,12 @@ const shows = [
         date: "2026-03-21",
     },
     {
+        title: "The D.O.T After Dark (Official After Party) at Kindred Bandroom, Melbourne Australia",
+        href: "https://dotafterdark2026.eventbrite.com.au",
+        imgSrc: "/img/shows-artwork/dotafterdark_january_2026.jpg",
+        date: "2026-01-03",
+    },
+    {
         title: "Blackout Frequency Presents: Dead Serpent - Boxing Day Warehouse Rave (Secret location announced on the night), Melbourne Australia",
         href: "https://events.humanitix.com/dead-serpent",
         imgSrc: "/img/shows-artwork/deadserpent_december_2025.jpg",
