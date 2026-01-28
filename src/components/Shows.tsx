@@ -5,14 +5,7 @@ import dayjs from "dayjs";
 import isSameOrAfter from "dayjs/plugin/isSameOrAfter";
 dayjs.extend(isSameOrAfter);
 
-
 const shows = [
-    {
-        title: "Like It Love It Events Presents: DnB Boat Party, Melbourne Australia",
-        href: "https://fixr.co/event/dnb-boat-party-melbourne-tickets-872451512",
-        imgSrc: "/img/shows-artwork/boatparty_march_2026.jpg",
-        date: "2026-03-21",
-    },
     {
         title: "The D.O.T After Dark (Official After Party) at Kindred Bandroom, Melbourne Australia",
         href: "https://dotafterdark2026.eventbrite.com.au",

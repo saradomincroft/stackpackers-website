@@ -4,6 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 const artworks = [
     {
+        title: "John Summit ft. Inéz - Crystallized (Stackpackers Bootleg)",
+        href: "https://soundcloud.com/stackpackers/crystallizedbootleg",
+        imgSrc: "/img/music-artwork/john-summit-crystallized-ft-inez-stackpackers-bootleg.jpg"
+    },
+    {
         title: "Ian Asher and Olly Alexander - Desire (Stackpackers Bootleg)",
         href: "https://soundcloud.com/stackpackers/desire-stackpackers-flip-free-download",
         imgSrc: "/img/music-artwork/desire-ian-asher-olly-alexander-stackpackers-bootleg.jpg"
