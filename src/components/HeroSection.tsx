@@ -24,7 +24,6 @@ const HeroSection = () => {
   }, [hasBurst]);
 
   useEffect(() => {
-    // Hide arrow when scrolling down, show it again when scrolling up
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setArrowVisible(false);

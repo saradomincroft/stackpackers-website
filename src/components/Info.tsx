@@ -121,12 +121,12 @@ const Info = () => {
             with their releases going off in the rave. 
             Their tracks have found a home with those who seek unfiltered chaos, and a fresh take 
             on the underground sound. 
-            Aside from DnB, they explore house, psytrance, dubstep, 
-            and UKG, 
-            always adding fresh twists and surprises to their sets.
+            They have recently launched <u><a href="https://electropolisrecords.com/">Electropolis Records</a></u>, a platform showcasing the vibrant, 
+            gritty, and moody sounds of the modern world. Their latest release &apos;Bubble Gun&apos; 
+            is out now on all major streaming platforms.
             </p>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed font-thin">
-            As the creators of Nocturne, a Melbourne &#40;Australia&#41; based event brand, Stackpackers have crafted a world where high 
+            As the creators of <u><a href="https://nocturneravers.com/">Nocturne Ravers</a></u>, a Melbourne &#40;Australia&#41; based event brand, Stackpackers have crafted a world where high 
             energy, dark gritty basslines, and moody liquid collide, a space where 
             rhythm and darkness surge together. Concepts like 
             Electropolis embody their unique approach to building immersive experiences, 

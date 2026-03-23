@@ -5,7 +5,7 @@ html {
 }
 
 html, body {
-    background-color: var(--stellar-purple)
+    background-color: var(--space-blue)
 }
 
 @font-face {
@@ -23,7 +23,7 @@ html, body {
 }
 
 :root {
-  --space-blue: #0d0d66	; 
+  --space-blue: #07062f; 
   --cosmic-blue: #14148a;
   --neon-blue: #0070f3;
   --stellar-purple: #1f1fcc;
@@ -38,7 +38,7 @@ body {
   font-weight: 400;
   color: var(--white);
   overflow-x: hidden;
-  background: linear-gradient(45deg, var(--space-blue), var(--cosmic-blue));
+  background: linear-gradient(45deg, var(--space-blue), var(--dark-space));
   background-size: 150% 150%;
   animation: gradientBackground 5s ease infinite;
   -webkit-font-smoothing: antialiased;

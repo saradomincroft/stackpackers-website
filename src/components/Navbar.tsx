@@ -9,175 +9,123 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ isVisible }) => {
   const [activeLink, setActiveLink] = useState<string>("hero-section");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [navColor, setNavColor] = useState("rgba(7,6,47,0.85)");
+
   const navbarHeight = 60;
 
   const sections = [
     { id: "hero-section", label: "HOME" },
     { id: "info-section", label: "INFO" },
-    { id: "music-section", label: "MUSIC" },
+    { id: "music-section", label: "RELEASES" },
     { id: "shows-section", label: "SHOWS" },
     { id: "links-section", label: "LINKS" },
     { id: "contact-section", label: "CONTACT" },
   ];
 
-  const handleClick = (link: string, sectionId: string, e: React.MouseEvent) => {
+  const handleClick = (sectionId: string, e: React.MouseEvent) => {
     e.preventDefault();
     setActiveLink(sectionId);
     setMenuOpen(false);
+
     const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const handleScroll = () => {
-    const offset = 1;
-    for (const { id } of sections) {
-      const section = document.getElementById(id);
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= navbarHeight + offset && rect.bottom >= window.innerHeight / 2) {
-          setActiveLink(id);
-          break;
-        }
+  const offset = 1;
+  for (const { id } of sections) {
+    const section = document.getElementById(id);
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= navbarHeight + offset && rect.bottom >= window.innerHeight / 2) {
+        setActiveLink(id);
+        break;
       }
     }
-  };
+  }
+
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollFraction = Math.min(scrollTop / docHeight, 1);
+
+  const start = { r: 1, g: 1, b: 1 };
+  const end = { r: 7, g: 6, b: 47 };
+
+  const r = Math.round(start.r + (end.r - start.r) * scrollFraction);
+  const g = Math.round(start.g + (end.g - start.g) * scrollFraction);
+  const b = Math.round(start.b + (end.b - start.b) * scrollFraction);
+
+  setNavColor(`rgba(${r},${g},${b},0.85)`);
+};
 
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  },);
+  }, );
 
   return (
     <>
+      {/* TOP NAV */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-opacity duration-1000 delay-1000`}
-        style={{
-          backgroundColor: "rgba(17,18,130,255)",
-          opacity: isVisible ? 1 : 0,
-          WebkitBackdropFilter: "blur(10px)",
-        }}
+        className="fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-colors duration-300"
+        style={{ backgroundColor: navColor, opacity: isVisible ? 1 : 0 }}
       >
         {/* Desktop nav */}
         <ul className="hidden md:flex justify-center items-center py-3 space-x-6 font-medium">
           {sections.map(({ id, label }) => (
             <li
               key={id}
-              className={`font-medium cursor-pointer transition duration-300 text-white ${
-                activeLink === id ? "active-link-desktop" : "link-desktop"
+              className={`cursor-pointer transition duration-300 ${
+                activeLink === id ? "text-[#ffea00]" : "text-white hover:text-[#ffea00]"
               }`}
-              onClick={(e) => handleClick(label.toLowerCase(), id, e)}
+              onClick={(e) => handleClick(id, e)}
             >
               {label}
             </li>
           ))}
         </ul>
-        <style jsx>{`
-          /* Desktop Link Styles */
-          .active-link-desktop {
-            color: #ffea00;
-          }
 
-          .link-desktop {
-            color: white;
-            transition: background-color 0.3s ease-in-out;
-            font-weight: 500;
-          }
-
-          .link-desktop:hover {
-            color: #ffea00;
-            background-color: transparent;
-          }
-        `}</style>
-      </nav>
-
-      <nav
-        className="fixed top-0 left-0 w-full z-50"
-        style={{
-          backgroundColor: "#111282",
-          opacity: isVisible ? 1 : 0,
-          transition: "opacity 1s ease-in-out 1s",
-        }}
-      >
-        {/* Mobile hamburger */}
-        <div className="md:hidden flex justify-between items-center p-2">
-          <span className="flex-1"></span>
+        {/* Mobile header */}
+        <div className="md:hidden flex justify-between items-center p-3">
+          <span />
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-            className="text-3xl z-[100] md:hidden transition-transform hover:scale-110 text-[#ffea00] cursor-pointer"
+            className="text-3xl text-[#ffea00] z-[100] cursor-pointer"
           >
-            {menuOpen ? (
-              <span className="text-2xl hover:text-[#ffea00] cursor-pointer">✕</span>
-            ) : (
-              "☰"
-            )}
+            {menuOpen ? "✕" : "☰"}
           </button>
         </div>
-
-        {/* Slide-in mobile nav */}
-        <div
-          className="md:hidden fixed top-0 right-0 w-full h-full transition-transform duration-500 ease-in-out"
-          style={{
-            transform: menuOpen ? "translateX(0)" : "translateX(100%)",
-            zIndex: 50,
-            backgroundColor: "rgba(17,18,130,255)",
-          }}
-        >
-          <ul
-            className="flex flex-col items-center space-y-2 p-0"
-            style={{ marginTop: `${navbarHeight - 8}px` }}
-          >
-            {sections.map(({ id, label }) => (
-              <li
-                key={id}
-                className="w-full m-0"
-              >
-                <a
-                  href={`#${id}`}
-                  className={`block w-full py-2 text-center text-white cursor-pointer transition duration-300 ${
-                    activeLink === id
-                      ? "active-link-mobile"
-                      : "link-mobile"
-                  }`}
-                  onClick={(e) => handleClick(label.toLowerCase(), id, e)}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <style jsx>{`
-          /* Mobile Link Styles */
-          .active-link-mobile {
-            color: #ffea00;
-            background-color: #1f1fcc;
-            padding: 6px 0;
-          }
-
-          .link-mobile {
-            color: white;
-            transition: background-color 0.3s ease-in-out;
-          }
-
-          .link-mobile:hover {
-            color: #ffea00;
-            background-color: #1f1fcc;
-          }
-
-          .active-link-mobile:hover {
-            background-color: #1f1fcc;
-          }
-
-          button:focus {
-            outline: none;
-          }
-        `}</style>
       </nav>
+
+      {/* MOBILE SIDE NAV */}
+    <div
+        className="md:hidden fixed top-0 right-0 w-full h-full z-40 transition-transform duration-500"
+        style={{
+            transform: menuOpen ? "translateX(0)" : "translateX(100%)",
+            backgroundColor: navColor.replace("0.85", "0.95"),
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+        }}
+    >
+        <ul className="flex flex-col items-center space-y-4" style={{ marginTop: navbarHeight }}>
+          {sections.map(({ id, label }) => (
+            <li key={id} className="w-full">
+              <a
+                href={`#${id}`}
+                onClick={(e) => handleClick(id, e)}
+                className={`block w-full text-center py-3 transition ${
+                  activeLink === id
+                    ? "text-[#ffea00] bg-[rgba(255,255,255,0.05)]"
+                    : "text-white hover:text-[#ffea00]"
+                }`}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 };

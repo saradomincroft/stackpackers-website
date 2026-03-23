@@ -7,6 +7,18 @@ dayjs.extend(isSameOrAfter);
 
 const shows = [
     {
+        title: "Archies Creek Day Doof, Archies Creek VIC Australia",
+        href: "https://www.eventbrite.com.au/e/archies-creek-day-doof-tickets-1976420269229",
+        imgSrc: "/img/shows-artwork/archies_creek_day_doof_february_2026.jpg",
+        date: "2026-02-14",
+    },
+    {
+        title: "Blackout Frequency Truck Pop Up Rave, Melbourne Australia",
+        href: "https://events.humanitix.com/blackout-frequency-truck-rave",
+        imgSrc: "/img/shows-artwork/blackoutfrequency_truck_rave_february_2026.jpg",
+        date: "2026-02-07",
+    },
+    {
         title: "The D.O.T After Dark (Official After Party) at Kindred Bandroom, Melbourne Australia",
         href: "https://dotafterdark2026.eventbrite.com.au",
         imgSrc: "/img/shows-artwork/dotafterdark_january_2026.jpg",

@@ -4,7 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 const artworks = [
     {
-        title: "John Summit ft. Inéz - Crystallized (Stackpackers Bootleg)",
+        title: "James Hype ft. Sam Harper & Bobby Harbey - Waterfalls (Stackpackers Bootleg)",
+        href: "https://soundcloud.com/stackpackers/waterfalls-bootleg",
+        imgSrc: "/img/music-artwork/waterfalls-james-hype-feat-sam-harper-bobby-harvey-stackpackers-bootleg.jpg"
+    },
+    {
+        title: "John Summit ft. Inéz - Waterfalls (Stackpackers Bootleg)",
         href: "https://soundcloud.com/stackpackers/crystallizedbootleg",
         imgSrc: "/img/music-artwork/john-summit-crystallized-ft-inez-stackpackers-bootleg.jpg"
     },
@@ -96,7 +101,7 @@ export default function Music() {
       className="py-4 text-white "
     >
         <h2 className="sr-only">Music</h2>
-        <h3 className="text-2xl font-medium mt-8 text-center text-[#ffea00]">RELEASES</h3>
+        <h3 className="text-2xl font-medium mt-16 text-center text-[#ffea00]">RELEASES</h3>
       <div
         className={`grid grid-cols-3 gap-4 py-4 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
