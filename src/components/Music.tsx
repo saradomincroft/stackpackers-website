@@ -4,6 +4,26 @@ import { useEffect, useRef, useState } from "react";
 
 const artworks = [
     {
+        title: "Stackpackers - Just a Dream",
+        href: "https://hypeddit.com/stackpackers/justadream",
+        imgSrc: "/img/music-artwork/stackpackers_just_a_dream.jpg"
+    },
+    {
+        title: "Stackpackers - Grit Happens",
+        href: "https://hypeddit.com/stackpackers/grithappens",
+        imgSrc: "/img/music-artwork/stackpackers_grit_happens.jpg"
+    },
+    {
+        title: "Crazy Town - Butterfly (Stackpackers Bootleg)",
+        href: "https://soundcloud.com/stackpackers/butterflybootleg",
+        imgSrc: "/img/music-artwork/crazy_town_butterfly_stackpackers_bootleg.jpg"
+    },
+    {
+        title: "Stackpackers - Bubble Gun",
+        href: "https://hypeddit.com/stackpackers/bubblegun",
+        imgSrc: "/img/music-artwork/stackpackers_bubble_gun.jpg"
+    },
+    {
         title: "James Hype ft. Sam Harper & Bobby Harbey - Waterfalls (Stackpackers Bootleg)",
         href: "https://soundcloud.com/stackpackers/waterfalls-bootleg",
         imgSrc: "/img/music-artwork/waterfalls-james-hype-feat-sam-harper-bobby-harvey-stackpackers-bootleg.jpg"

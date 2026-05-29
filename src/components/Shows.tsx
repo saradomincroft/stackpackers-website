@@ -7,6 +7,12 @@ dayjs.extend(isSameOrAfter);
 
 const shows = [
     {
+        title: "Inhibit and Nocturne Present Skepsis at Sub Club, Melbourne Australia",
+        href: "https://megatix.com.au/events/skepsis-uk-melbourne",
+        imgSrc: "/img/shows-artwork/skepsis_nocturne_subclub_may_2026.jpg",
+        date: "2026-05-22",
+    },
+    {
         title: "Archies Creek Day Doof, Archies Creek VIC Australia",
         href: "https://www.eventbrite.com.au/e/archies-creek-day-doof-tickets-1976420269229",
         imgSrc: "/img/shows-artwork/archies_creek_day_doof_february_2026.jpg",

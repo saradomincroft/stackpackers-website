@@ -44,14 +44,14 @@ const Info = () => {
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6 overflow-hidden`}
         style={{
-          backgroundColor: "#005A74",
+          backgroundColor: "#312888",
           transitionDelay: inView ? "0.2s" : "0s",
           borderRadius: "0px",
         }}
       >
         <iframe 
             data-testid="embed-iframe"
-            src="https://open.spotify.com/embed/track/03nP7F2VOVBRTeWJ6Qjh8W?utm_source=generator"
+            src="https://open.spotify.com/embed/track/561MZkrtwQgYCG9p47Mzpu?utm_source=generator"
             width="100%"
             height="152"
             title="Stackpackers Spotify Release - Woo Bass"
