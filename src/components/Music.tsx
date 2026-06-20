@@ -4,6 +4,11 @@ import { useEffect, useRef, useState } from "react";
 
 const artworks = [
     {
+        title: "Stackpackers - Gettin' HOT!",
+        href: "https://www.beatport.com/release/gettin-hot/6994615",
+        imgSrc: "/img/music-artwork/stackpackers_gettin_hot.jpg"
+    },
+    {
         title: "Stackpackers - Just a Dream",
         href: "https://hypeddit.com/stackpackers/justadream",
         imgSrc: "/img/music-artwork/stackpackers_just_a_dream.jpg"

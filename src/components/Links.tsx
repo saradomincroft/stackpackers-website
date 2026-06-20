@@ -6,14 +6,14 @@ const Links = () => {
   const [hasScrolledIn, setHasScrolledIn] = useState(false);
 
   const links = [
-    { href: "https://instagram.com/stackpackers", label: "Instagram" },
-    { href: "https://facebook.com/stackpackers", label: "Facebook" },
-    { href: "https://www.tiktok.com/@stackpackers", label: "TikTok" },
+    { href: "https://www.beatport.com/artist/stackpackers/1142861", label: "Beatport" },
     { href: "https://open.spotify.com/artist/6oPMjcVt82VYpcntvL2JqZ?si=UjX0Yg0hQ96CzT9vUlkBuw", label: "Spotify" },
     { href: "https://www.youtube.com/channel/UCDLU5AEO7qqnQXJPHlA9sPQ", label: "YouTube" },
-    { href: "https://www.soundcloud.com/stackpackers", label: "Soundcloud" },
-    { href: "https://www.beatport.com/artist/stackpackers/1142861", label: "Beatport" },
     { href: "https://music.apple.com/us/artist/stackpackers/1698648603", label: "Apple Music" },
+    { href: "https://www.soundcloud.com/stackpackers", label: "Soundcloud" },
+    { href: "https://instagram.com/stackpackers", label: "Instagram" },
+    { href: "https://www.tiktok.com/@stackpackers", label: "TikTok" },
+    { href: "https://facebook.com/stackpackers", label: "Facebook" },
     { href: "https://music.amazon.com/artists/B0B63XG3MK/stackpackers", label: "Amazon Music" },
     { href: "https://stackpackers.bandcamp.com/", label: "Bandcamp" },
   ];

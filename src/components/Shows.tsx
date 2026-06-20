@@ -7,6 +7,18 @@ dayjs.extend(isSameOrAfter);
 
 const shows = [
     {
+        title: "Delight Records Game in the Groove at Section 8, Melbourne Australia",
+        href: "https://www.facebook.com/events/1517947633401023",
+        imgSrc: "/img/shows-artwork/delight_game_in_the_groove_12_july_2026.jpg",
+        date: "2026-07-12",
+    },
+    {
+        title: "Eat The Beat Saturdays at il Mercato Central, Melbourne Australia",
+        href: "https://www.eventbrite.com.au/e/eat-the-beat-saturdays-july-11-tickets-1991516959837",
+        imgSrc: "/img/shows-artwork/eat_the_beat_11_july_2026.jpg",
+        date: "2026-07-11",
+    },
+    {
         title: "Inhibit and Nocturne Present Skepsis at Sub Club, Melbourne Australia",
         href: "https://megatix.com.au/events/skepsis-uk-melbourne",
         imgSrc: "/img/shows-artwork/skepsis_nocturne_subclub_may_2026.jpg",
@@ -35,12 +47,6 @@ const shows = [
         href: "https://events.humanitix.com/dead-serpent",
         imgSrc: "/img/shows-artwork/deadserpent_december_2025.jpg",
         date: "2025-12-26",
-    },
-    {
-        title: "Pulse Audio & SUB:SOLAR Present: Xmas Eve in the Park, Melbourne Australia",
-        href: "https://www.instagram.com/pulse_audio_",
-        imgSrc: "/img/shows-artwork/xmaseveinthepark_december_2025.jpg",
-        date: "2025-12-24",
     },
     {
         title: "Abyssal Presents Soulful Sessions at Nevermind Bar, Melbourne Australia",
