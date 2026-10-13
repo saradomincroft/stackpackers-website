@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useRef, useState } from "react";
 
@@ -44,27 +43,27 @@ const Info = () => {
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"
         } w-[80%] mt-6 overflow-hidden`}
         style={{
-          backgroundColor: "#312888",
+          backgroundColor: "#92007d",
           transitionDelay: inView ? "0.2s" : "0s",
           borderRadius: "0px",
         }}
       >
-        <iframe 
-            data-testid="embed-iframe"
-            src="https://open.spotify.com/embed/track/561MZkrtwQgYCG9p47Mzpu?utm_source=generator"
-            width="100%"
-            height="152"
-            title="Stackpackers Spotify Release - Woo Bass"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            style={{
-                border: "none",
-                margin: "-1px",
-                width: "calc(100% + 2px)",
-                height: "154px",
-            }}
-            >
-        </iframe>
+        <iframe
+        data-testid="embed-iframe"
+        src="https://open.spotify.com/embed/track/1GHbPLS2TmiTXB75u2dtwc?utm_source=generator&si=095757aa38ac412b"
+        width="100%"
+        height="152"
+        title="Stackpackers Spotify Release"
+        frameBorder="0"
+        allowFullScreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        style={{
+            border: "none",
+            borderRadius: "12px",
+            display: "block",
+        }}
+        />
       </div>
         {/* PRESS IMAGE */}
         <div
@@ -101,37 +100,25 @@ const Info = () => {
         <div className="p-6" style={{ backgroundColor: "rgba(0, 31, 61, 0.8)" }}>
             <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
             Stackpackers are a storm in full force, sharing a
-            chemistry that&apos;s electric, unpredictable, and experimental. The duo originated 
-            in the UK and are currently based in Melbourne.
-            </p>
-            <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
-            With drum & bass at the heart of their sound, Stackpackers
-            have made their mark with amped-up, power-packed DnB sets that keep
+            chemistry that&apos;s electric, unpredictable, and experimental. 
+            With drum & bass at the heart of their sound, UK born duo
+            have made their mark with power-packed sets that keep
             the dance floor charged. However, it&apos;s not all thunder and
-            lightning, they know exactly when to bring it down with emotional,
-            moody liquid, proving they&apos;re as versatile as they are energetic.
+            lightning, they know exactly when to bring it down with moody and dark sounds.
             </p>
             <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
-            From bass heavy DnB to soulful liquid, blending old and new, Stackpackers bring the kind of 
-            energy that makes every performance and song unique and every performance a
-            sonic adventure.
+            You can also catch them playing liquid, dubstep, UKG and psytrance sets, 
+            proving they&apos;re as versatile as they are energetic. 
+            The pair bring their signature energy to all performances.
             </p>
             <p className="pb-4 text-sm sm:text-base md:text-lg leading-relaxed font-thin">
             In the production space, Stackpackers have been gaining traction 
             with their releases going off in the rave. 
             Their tracks have found a home with those who seek unfiltered chaos, and a fresh take 
             on the underground sound. 
-            They have recently launched <u><a href="https://electropolisrecords.com/">Electropolis Records</a></u>, a platform showcasing the vibrant, 
-            gritty, and moody sounds of the modern world. Their latest release &apos;Bubble Gun&apos; 
-            is out now on all major streaming platforms.
+            They recently launched <u><a href="https://electropolisrecords.com/">Electropolis Records</a></u>, 
+            a platform showcasing the vibrant and gritty sounds of the modern world.
             </p>
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed font-thin">
-            As the creators of <u><a href="https://nocturneravers.com/">Nocturne Ravers</a></u>, a Melbourne &#40;Australia&#41; based event brand, Stackpackers have crafted a world where high 
-            energy, dark gritty basslines, and moody liquid collide, a space where 
-            rhythm and darkness surge together. Concepts like 
-            Electropolis embody their unique approach to building immersive experiences, 
-            always pushing the boundaries of sound and atmosphere.
-          </p>
         </div>
       </div>
       

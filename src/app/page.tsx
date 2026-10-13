@@ -13,10 +13,15 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 export default function Home() {
-  const [showNavbar, setShowNavbar] = useState(false);
-  useEffect(() => {
+const [showNavbar, setShowNavbar] = useState(false);
+
+useEffect(() => {
+  const timer = window.setTimeout(() => {
     setShowNavbar(true);
-  }, []);
+  }, 1800);
+
+  return () => window.clearTimeout(timer);
+}, []);
 
   return (
     <>
@@ -39,7 +44,6 @@ export default function Home() {
           }}
         />
         <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img height="1" width="1" style={{ display: 'none' }}
             src="https://www.facebook.com/tr?id=1642911539671658&ev=PageView&noscript=1"
             alt="" />

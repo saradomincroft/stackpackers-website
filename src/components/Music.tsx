@@ -1,11 +1,25 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useRef, useState } from "react";
 
 const artworks = [
     {
+        title: "Stackpackers - Super Ghost EP",
+        href: "https://www.beatport.com/release/super-ghost-ep/7504571",
+        imgSrc: "/img/music-artwork/stackpackers_super_ghost_ep.jpg"
+    },
+    {
+        title: "Stackpackers - Starz",
+        href: "https://hypeddit.com/stackpackers/starz",
+        imgSrc: "/img/music-artwork/stackpackers_starz.jpg"
+    },
+    {
+        title: "Stackpackers - Current Mood",
+        href: "https://hypeddit.com/stackpackers/currentmood",
+        imgSrc: "/img/music-artwork/stackpackers_current_mood.jpg"
+    },
+    {
         title: "Stackpackers - Gettin' HOT!",
-        href: "https://www.beatport.com/release/gettin-hot/6994615",
+        href: "https://hypeddit.com/stackpackers/gettinhot",
         imgSrc: "/img/music-artwork/stackpackers_gettin_hot.jpg"
     },
     {
@@ -19,29 +33,9 @@ const artworks = [
         imgSrc: "/img/music-artwork/stackpackers_grit_happens.jpg"
     },
     {
-        title: "Crazy Town - Butterfly (Stackpackers Bootleg)",
-        href: "https://soundcloud.com/stackpackers/butterflybootleg",
-        imgSrc: "/img/music-artwork/crazy_town_butterfly_stackpackers_bootleg.jpg"
-    },
-    {
         title: "Stackpackers - Bubble Gun",
         href: "https://hypeddit.com/stackpackers/bubblegun",
         imgSrc: "/img/music-artwork/stackpackers_bubble_gun.jpg"
-    },
-    {
-        title: "James Hype ft. Sam Harper & Bobby Harbey - Waterfalls (Stackpackers Bootleg)",
-        href: "https://soundcloud.com/stackpackers/waterfalls-bootleg",
-        imgSrc: "/img/music-artwork/waterfalls-james-hype-feat-sam-harper-bobby-harvey-stackpackers-bootleg.jpg"
-    },
-    {
-        title: "John Summit ft. Inéz - Waterfalls (Stackpackers Bootleg)",
-        href: "https://soundcloud.com/stackpackers/crystallizedbootleg",
-        imgSrc: "/img/music-artwork/john-summit-crystallized-ft-inez-stackpackers-bootleg.jpg"
-    },
-    {
-        title: "Ian Asher and Olly Alexander - Desire (Stackpackers Bootleg)",
-        href: "https://soundcloud.com/stackpackers/desire-stackpackers-flip-free-download",
-        imgSrc: "/img/music-artwork/desire-ian-asher-olly-alexander-stackpackers-bootleg.jpg"
     },
     {
         title: "Woo Bass",
@@ -125,8 +119,8 @@ export default function Music() {
       ref={sectionRef}
       className="py-4 text-white "
     >
-        <h2 className="sr-only">Music</h2>
-        <h3 className="text-2xl font-medium mt-16 text-center text-[#ffea00]">RELEASES</h3>
+        <h2 className="sr-only">Bangers</h2>
+        <h3 className="text-2xl font-medium mt-16 text-center text-[#ffea00]">BANGERS</h3>
       <div
         className={`grid grid-cols-3 gap-4 py-4 w-[80%] mx-auto transition-all duration-1000 ease-in-out transform ${
           inView ? "opacity-100 translate-y-2" : "opacity-0 translate-y-8"

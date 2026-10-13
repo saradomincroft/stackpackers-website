@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useRef, useState } from "react";
 import dayjs from "dayjs";
@@ -7,6 +6,30 @@ dayjs.extend(isSameOrAfter);
 
 const shows = [
     {
+        title: "Nocturne Presents HARD DNB at Bad Decisions, Melbourne Australia",
+        href: "https://nocturne-hard-dnb-13-nov-26.eventbrite.com.au",
+        imgSrc: "/img/shows-artwork/nocturne_hard_dnb_november_2026.jpg",
+        date: "2026-11-13",
+    },
+    {
+        title: "3AM Crew Halloween Warehouse Rave, Melbourne Australia",
+        href: "https://events.humanitix.com/3am-the-devil-made-me-do-it-underground-halloween-rave/tickets?discountcode=STACKPACKERS-3AM",
+        imgSrc: "/img/shows-artwork/3am_devil_made_me_do_it_halloween_rave_2026.jpg",
+        date: "2026-10-31",
+    },
+    {
+        title: "Delight Game in the Groove at Aki Bar, Melbourne Australia",
+        href: "https://www.instagram.com/gameinthegroove/reel/DdAfPhyNaOU/",
+        imgSrc: "/img/shows-artwork/game_in_the_groove_delight_2026.jpg",
+        date: "2026-10-10",
+    },
+    {
+        title: "Logika Presents Proper DnB Stackpackers Headliner at QQQ, Melbourne Australia",
+        href: "https://ra.co/events/2491995",
+        imgSrc: "/img/shows-artwork/logika_proper_dnb_stackpackers_september_2026.jpg",
+        date: "2026-09-04",
+    },
+    {
         title: "Delight Records Game in the Groove at Section 8, Melbourne Australia",
         href: "https://www.facebook.com/events/1517947633401023",
         imgSrc: "/img/shows-artwork/delight_game_in_the_groove_12_july_2026.jpg",
@@ -14,7 +37,7 @@ const shows = [
     },
     {
         title: "Eat The Beat Saturdays at il Mercato Central, Melbourne Australia",
-        href: "https://www.eventbrite.com.au/e/eat-the-beat-saturdays-july-11-tickets-1991516959837",
+        href: "https://www.eventbrite.com.au/e/eat-the-beat-saturdays-july-11-tickets-1991516959837?discount=LUSHSOUNDS",
         imgSrc: "/img/shows-artwork/eat_the_beat_11_july_2026.jpg",
         date: "2026-07-11",
     },
@@ -49,12 +72,6 @@ const shows = [
         date: "2025-12-26",
     },
     {
-        title: "Abyssal Presents Soulful Sessions at Nevermind Bar, Melbourne Australia",
-        href: "https://www.facebook.com/events/2081448785928836",
-        imgSrc: "/img/shows-artwork/soulfulsessions_december_2025.jpg",
-        date: "2025-12-13",
-    },
-    {
         title: "Pitch Control Presents Wilkinson, Rova, and Sammythesinner at 170 Russell, Melbourne Australia",
         href: "https://moshtix.com.au/v2/event/wilkinson/184336",
         imgSrc: "/img/shows-artwork/wilkinson_november_2025.jpg",
@@ -65,12 +82,6 @@ const shows = [
         href: "https://ra.co/events/2243135",
         imgSrc: "/img/shows-artwork/electropolis_halloween_edition_october_2025.jpg",
         date: "2025-10-31",
-    },
-    {
-        title: "Like It Love It Events Presents: DnB Boat Party, Melbourne Australia",
-        href: "https://fixr.co/event/drum-and-bass-boat-party-melbourne-tickets-374049284",
-        imgSrc: "/img/shows-artwork/dnboatparty_october_2025.jpg",
-        date: "2025-10-25",
     },
     {
         title: "House of Sin at Top Yard Rooftop, Melbourne Australia",
@@ -91,46 +102,16 @@ const shows = [
         date: "2025-09-07",
     },
     {
-        title: "Blackout Frequency Present Whiteout Frequency at The General Mt Hotham, Hotham Australia",
-        href: "https://events.humanitix.com/whiteout-frequency",
-        imgSrc: "/img/shows-artwork/whiteout_frequency_august_2025.jpg",
-        date: "2025-08-30",
-    },
-    {
-        title: "Slack Soundsystem at Second Story Studios, Melbourne Australia",
-        href: "https://www.eventbrite.com.au/e/slack-sound-system-warehouse-party-tickets-1459809853569",
-        imgSrc: "/img/shows-artwork/slacksoundsystem.jpg",
-        date: "2025-08-02",
-    },
-    {
-        title: "Blackout Frequency Warehouse Rave Volume 2, Melbourne Australia",
-        href: "https://events.humanitix.com/blackout-frequency-v2",
-        imgSrc: "/img/shows-artwork/blackoutfrequencyvol2.jpg",
-        date: "2025-07-26",
-    },
-    {
         title: "Nocturne Presents Electropolis: Liquid and Dark Drum and Bass Edition at QQQ, Melbourne Australia",
         href: "https://ra.co/events/2190164",
         imgSrc: "/img/shows-artwork/nocturneelectropolis.jpg",
         date: "2025-07-18",
     },
     {
-        title: "SUB-MERGED at Laundry, Melbourne Australia",
-        href: "https://m.moshtix.com.au/v2/event/sub-merged-laundry/181747",
-        imgSrc: "/img/shows-artwork/submerged.jpg",
-        date: "2025-07-12",
-    },
-    {
         title: "Twisted Audio and Inhibit Present A.M.C. & Phantom, Koven, Skantia, Circadian at 170 Russell, Melbourne Australia",
         href: "https://moshtix.com.au/v2/event/a-m-c-phantom-koven-skantia-circadian/178936",
         imgSrc: "/img/shows-artwork/amc.jpg",
         date: "2025-06-08",
-    },
-    {
-        title: "Hyperfix Crew Presents Rum & Bass at Section 8, Melbourne Australia",
-        href: "https://www.instagram.com/hyperfix.crew/",
-        imgSrc: "/img/shows-artwork/rnb.jpeg",
-        date: "2025-05-29",
     },
     {
         title: "Blackout Frequency Warehouse Rave Volume 1, Melbourne Australia",
@@ -197,12 +178,12 @@ export default function Shows() {
       style={{ minWidth: "320px" }}
       ref={containerRef}
     >
-      <h2 className="sr-only">Shows</h2>
+      <h2 className="sr-only">Raves</h2>
 
       {/* UPCOMING SHOWS */}
       {upcoming.length > 0 && (
         <>
-          <h3 className="text-2xl font-medium mb-4 text-center text-[#ffea00]">UPCOMING EVENTS</h3>
+          <h3 className="text-2xl font-medium mb-4 text-center text-[#ffea00]">UPCOMING RAVES</h3>
           <div className="relative flex items-center justify-center gap-2 w-full">
             {/* Scroll container */}
             <div
@@ -256,7 +237,7 @@ export default function Shows() {
       {/* PAST SHOWS */}
       {past.length > 0 && (
         <>
-          <h3 className="text-2xl font-medium mb-4 mt-8 text-center text-[#ffea00]">PAST EVENTS</h3>
+          <h3 className="text-2xl font-medium mb-4 mt-8 text-center text-[#ffea00]">PAST RAVES</h3>
           <div className="relative flex items-center justify-center gap-2 w-full">
             {/* Scroll container */}
             <div
