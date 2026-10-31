@@ -14,7 +14,7 @@ const shows = [
     {
         title: "3AM Crew Halloween Warehouse Rave, Melbourne Australia",
         href: "https://events.humanitix.com/3am-the-devil-made-me-do-it-underground-halloween-rave/tickets?discountcode=STACKPACKERS-3AM",
-        imgSrc: "/img/shows-artwork/3am_devil_made_me_do_it_halloween_rave_2026.jpg",
+        imgSrc: "/img/shows-artwork/3am_devil_made_me_do_it_halloween_rave_melbourne_2026.jpg",
         date: "2026-10-31",
     },
     {

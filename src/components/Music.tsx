@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const artworks = [
     {
         title: "Stackpackers - Super Ghost EP",
-        href: "https://www.beatport.com/release/super-ghost-ep/7504571",
+        href: "https://hypeddit.com/stackpackers/superghost",
         imgSrc: "/img/music-artwork/stackpackers_super_ghost_ep.jpg"
     },
     {
